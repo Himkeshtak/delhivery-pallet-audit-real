@@ -22,7 +22,8 @@ ml = [
   "torchvision>=0.19",
   "ultralytics>=8.3,<9",
   "transformers>=4.48,<6",
-  "anomalib>=2.0,<3",
+  "anomalib==2.6.0; python_version < '3.13'",
+  "supervision>=0.26,<1",
 ]
 dev = [
   "pytest>=8,<10",

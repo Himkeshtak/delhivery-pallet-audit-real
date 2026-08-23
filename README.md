@@ -99,10 +99,28 @@ python tools/download_roboflow.py --config configs/data_sources.yaml
 python tools/audit_dataset.py
 ```
 
-The exact commands for dataset audit, preparation, training, evaluation, and
-export will be added and exercised in subsequent stage commits. Large source
-archives and model binaries are intentionally excluded from Git; SHA-256
-manifests and release-asset instructions keep them reproducible.
+The commands below produce manifests and distribution reports. They cannot be
+executed against the requested data until the authenticated archives and
+model-specific labels exist. Large source archives and model binaries are
+excluded from Git; SHA-256 manifests and release-asset instructions keep them
+reproducible.
+
+```powershell
+# After model-specific labels/data.yaml have passed audit:
+python tools/train_yolo.py --task detect --data data/processed/detect/data.yaml --run-name detect-real-v1
+python tools/train_yolo.py --task segment --data data/processed/segment/data.yaml --run-name segment-real-v1
+python tools/train_yolo.py --task pose --data data/processed/pose/data.yaml --run-name pose-real-v1
+
+# Nominal visible crops versus separately labelled damaged holdout:
+python tools/train_anomaly.py --model efficientad --data data/processed/anomaly
+python tools/train_anomaly.py --model patchcore --data data/processed/anomaly
+
+# Calibration and distribution reports:
+python tools/calibrate_camera.py --images data/calibration/chessboard --columns 9 --rows 6 --square-size-m 0.024
+python tools/calibrate_floor_homography.py --points data/calibration/floor_points.csv --calibration-id pillar-camera-v1
+python tools/evaluate_detection.py --ground-truth data/holdout/_annotations.coco.json --predictions runs/predictions.json
+python tools/evaluate_pose.py --predictions data/holdout/pose_predictions.csv
+```
 
 ## Results
 
