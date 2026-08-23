@@ -9,6 +9,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from pallet_audit.training import validate_anomaly_folder
+
 
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -16,22 +18,6 @@ def _sha256(path: Path) -> str:
         while chunk := handle.read(1024 * 1024):
             digest.update(chunk)
     return digest.hexdigest()
-
-
-def validate_folder_layout(root: Path) -> dict[str, Path]:
-    paths = {
-        "normal_train": root / "train" / "good",
-        "normal_test": root / "test" / "good",
-        "abnormal_test": root / "test" / "bad",
-    }
-    missing = [name for name, path in paths.items() if not path.is_dir()]
-    if missing:
-        raise ValueError(f"anomaly dataset is missing required directories: {missing}")
-    if not any(paths["normal_train"].iterdir()):
-        raise ValueError("normal training directory is empty")
-    if not any(paths["abnormal_test"].iterdir()):
-        raise ValueError("abnormal test directory is empty; AUROC/F1 cannot be measured")
-    return paths
 
 
 def parse_args() -> argparse.Namespace:
@@ -50,7 +36,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    validate_folder_layout(args.data)
+    validate_anomaly_folder(args.data)
     try:
         import anomalib
         import torch

@@ -8,9 +8,8 @@ import platform
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
 
-import yaml
+from pallet_audit.training import validate_yolo_training_plan
 
 DEFAULT_MODELS = {
     "detect": "yolo11n.pt",
@@ -25,26 +24,6 @@ def sha256_file(path: Path) -> str:
         while chunk := handle.read(1024 * 1024):
             digest.update(chunk)
     return digest.hexdigest()
-
-
-def validate_training_plan(task: str, data_path: Path, model: str) -> dict[str, Any]:
-    if task not in DEFAULT_MODELS:
-        raise ValueError(f"unsupported task: {task}")
-    if not data_path.is_file():
-        raise ValueError(f"dataset YAML does not exist: {data_path}")
-    payload = yaml.safe_load(data_path.read_text(encoding="utf-8"))
-    if not isinstance(payload, dict) or "train" not in payload or "val" not in payload:
-        raise ValueError("dataset YAML must define train and val")
-    if task == "pose" and "kpt_shape" not in payload:
-        raise ValueError(
-            "pose training requires human-verified keypoint labels and kpt_shape; "
-            "boxes are not pose labels"
-        )
-    if task == "segment" and "seg" not in Path(model).stem.lower():
-        raise ValueError("segment task requires a segmentation checkpoint such as yolo11n-seg.pt")
-    if task == "pose" and "pose" not in Path(model).stem.lower():
-        raise ValueError("pose task requires a pose checkpoint such as yolo11n-pose.pt")
-    return payload
 
 
 def parse_args() -> argparse.Namespace:
@@ -67,7 +46,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     model_name = args.model or DEFAULT_MODELS[args.task]
-    validate_training_plan(args.task, args.data, model_name)
+    validate_yolo_training_plan(args.task, args.data, model_name)
     try:
         import torch
         import ultralytics
