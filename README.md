@@ -92,9 +92,11 @@ Why these roles:
 ## Reproducibility
 
 ```powershell
+python -m pip install -e ".[dev]"
 Copy-Item .env.example .env
 # Put your Roboflow private API key in .env, then:
 python tools/download_roboflow.py --config configs/data_sources.yaml
+python tools/audit_dataset.py
 ```
 
 The exact commands for dataset audit, preparation, training, evaluation, and
@@ -127,4 +129,3 @@ documentation. The critical error caught during review was that the earlier
 prototype trained on procedurally generated labels and described the resulting
 checkpoint too broadly. This repository corrects that by accepting only
 traceable real data for headline training and evaluation.
-
