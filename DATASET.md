@@ -64,11 +64,31 @@ segmentation groups cross supplier split boundaries. Several filenames also
 identify augmented variants of the same capture. Consequently, supplier test
 metrics would be optimistic and will not be reported as the final holdout.
 
-The processed split groups source identity, augmentation family, and detected
-near-duplicates before assigning approximately 80/10/10 train/validation/test.
-The group—not an image—is the unit of assignment. Split manifests preserve the
-raw source ID and original split. A separately captured assignment-domain set
-from the stated fixed camera is still required for metric pose and SOP claims.
+The processed split groups source identity, augmentation family, capture date,
+and identical perceptual hashes before deterministic assignment toward an
+80/10/10 target. The group—not an image—is the unit of assignment. Exact ratios
+are intentionally secondary to preventing capture leakage.
+
+| Prepared task | Train | Validation | Test | Groups | Largest group |
+|---|---:|---:|---:|---:|---:|
+| Detection | 1,488 | 458 | 262 | 153 | 858 images |
+| Segmentation | 841 | 106 | 105 | 174 | 466 images |
+
+Detection's 2025-07-29 capture day is train-only; 2025-08-13 is
+validation-only; and 2025-08-06 is test-only. This makes the holdouts differ by
+capture day, but the large day groups force a 67.4/20.7/11.9 split instead of
+80/10/10. The detection train/validation/test instance totals are
+61,091/1,960/573. Segmentation reaches 79.9/10.1/10.0 images and
+2,955/363/335 instances. No prepared group crosses a split.
+
+The converter removes two declared but empty categories and produces observed
+class maps only: detection has `hole` and `pallet`; segmentation has `front`,
+`hole`, `hole_left`, `hole_right`, `pallet`, `pallet_front`, `pallet_pocket`,
+and `wood`. It preserves negative images (426 detection, 4 segmentation) rather
+than silently dropping them. Split manifests preserve the raw source ID,
+original split, origin family, and group ID. A separately captured
+assignment-domain set from the stated fixed camera is still required for metric
+pose and SOP claims.
 
 ## Sourcing and annotation cost
 

@@ -1,0 +1,28 @@
+{
+  "validation_schema_version": 1,
+  "dataset": "detect",
+  "task": "detect",
+  "images_by_split": {
+    "test": 262,
+    "train": 1488,
+    "valid": 458
+  },
+  "labels_by_split": {
+    "test": 262,
+    "train": 1488,
+    "valid": 458
+  },
+  "instances_by_split": {
+    "test": 573,
+    "train": 61091,
+    "valid": 1960
+  },
+  "groups": 153,
+  "gates": {
+    "all_images_have_labels": true,
+    "all_labels_have_images": true,
+    "all_class_ids_valid": true,
+    "all_coordinates_normalized": true,
+    "cross_split_groups": 0
+  }
+}

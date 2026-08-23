@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import platform
 import subprocess
 from datetime import datetime, timezone
@@ -47,6 +48,7 @@ def main() -> int:
     args = parse_args()
     model_name = args.model or DEFAULT_MODELS[args.task]
     validate_yolo_training_plan(args.task, args.data, model_name)
+    os.environ.setdefault("YOLO_CONFIG_DIR", str(Path(".ultralytics").resolve()))
     try:
         import torch
         import ultralytics

@@ -1,10 +1,10 @@
 # Delhivery Pallet Audit — real-data implementation
 
 > Status: both user-supplied real Roboflow exports are imported and audited.
-> Their original splits contain cross-split perceptual duplicates, so grouped
-> leakage-controlled preparation is required before headline training. This
-> repository contains no synthetic training result and no unmeasured hardware
-> claim.
+> Their original splits contain cross-split perceptual duplicates. Grouped,
+> leakage-controlled YOLO detection and segmentation datasets have now passed
+> validation and are ready for real-data fine-tuning. This repository contains
+> no synthetic training result and no unmeasured hardware claim.
 
 This project implements one explainable pallet assessment per tracked pallet:
 metric floor pose with uncertainty, directed face/orientation, eight SOP checks
@@ -107,6 +107,10 @@ python tools/download_roboflow.py --config configs/data_sources.yaml
 # Or, for ZIPs downloaded through the Roboflow UI:
 python tools/import_local_archives.py
 python tools/audit_dataset.py
+python tools/prepare_yolo.py --source data/raw/pallet_detect_v1 --output data/processed/detect --task detect --report reports/detection_preparation.json
+python tools/prepare_yolo.py --source data/raw/plh_c_1_v1 --output data/processed/segment --task segment --report reports/segmentation_preparation.json
+python tools/validate_yolo_dataset.py --input data/processed/detect --task detect --report reports/detection_validation.json
+python tools/validate_yolo_dataset.py --input data/processed/segment --task segment --report reports/segmentation_validation.json
 ```
 
 The commands below produce manifests and distribution reports. They cannot be
@@ -135,10 +139,11 @@ python tools/evaluate_pose.py --predictions data/holdout/pose_predictions.csv
 ## Results
 
 The raw-data audit measured 2,208 detection images with 63,624 boxes and 1,052
-segmentation images with 3,653 polygons. File/task integrity gates pass and no
-byte-identical image crosses a split. The supplier splits fail the independence
-gate: 110 detection and 5 segmentation perceptual-hash groups cross split
-boundaries. Those splits are therefore excluded from headline accuracy claims.
+segmentation images with 3,653 polygons. File/task integrity gates pass. The
+supplier splits fail independence because 110 detection and 5 segmentation
+perceptual-hash groups cross boundaries. The replacement split has zero
+cross-split groups and holds out whole capture days for detection: 1,488 train,
+458 validation, and 262 test images. Segmentation has 841/106/105 images.
 
 Model distributions, three worst cases, metric calibration envelope, runtime,
 and memory remain pending leakage-controlled model training and, for physical

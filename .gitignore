@@ -5,6 +5,7 @@ __pycache__/
 .ruff_cache/
 .coverage
 htmlcov/
+.ultralytics/
 
 # Real datasets are downloaded reproducibly and are not redistributed.
 data/raw/**
@@ -29,4 +30,3 @@ artifacts/**
 *.engine
 *.pt
 *.pth
-
