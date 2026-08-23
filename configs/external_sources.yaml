@@ -1,0 +1,29 @@
+schema_version: 1
+canonical_format: coco
+sources:
+  - id: scd_oscd_official
+    provider: scd-authors
+    project: SCD-OSCD
+    version: official-2022-02-20
+    landing_page: https://github.com/yancie-yjr/scd.github.io
+    paper: https://arxiv.org/abs/2102.12808
+    download_url: https://drive.google.com/file/d/1YeZ4mg_qZ4dBvKKfgGF8RQcyOMNoMp37/view
+    expected_task: instance-segmentation
+    intended_role: individual-carton-mask-pretraining
+    license: CC BY-NC-SA 4.0
+    commercial_use: prohibited-without-author-permission
+    local_archive: scd_oscd_official.zip
+    archive_bytes: 1560001798
+    archive_sha256: da1b8063a73a7879670724daabab3005136744284bdc159624ae191b579d5980
+    published_counts:
+      images: 8401
+      train_images: 7401
+      test_images: 1000
+      instances: 168748
+    observed_counts:
+      images: 8401
+      train_images: 7401
+      test_images: 1000
+      instances: 168758
+    discrepancy_note: The downloaded canonical JSON contains ten more instances than the landing-page table; the audit reports observed JSON counts.
+

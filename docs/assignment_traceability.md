@@ -7,7 +7,7 @@ This checklist prevents a polished demo from hiding an unevaluated requirement.
 |---|---|---|
 | Standard dataset format and annotation tooling | canonical COCO export, deterministic converters, CVAT/SAM 2 workflow | COCO + VALIDATED YOLO DETECT/SEGMENT COMPLETE |
 | Source, rationale, cost, counts, split, guidelines, biases | `DATASET.md`, manifests, audit report | COMPLETE FOR SUPPLIED LABEL LAYERS |
-| Trained model/weights | committed selected checkpoints + SHA-256/model cards | DETECT + SEGMENT COMPLETE FOR SUPPLIED LABELS; POSE/DAMAGE LABELS ABSENT |
+| Trained model/weights | committed selected checkpoints + SHA-256/model cards | PALLET DETECT + STRUCTURAL SEGMENT COMPLETE; CARTON SEGMENT SOURCE SELECTED; POSE/DAMAGE LABELS ABSENT |
 | Detection vs localization on differing holdout | AP/PR and IoU/center-error distributions | DETECTOR COMPLETE ON CAPTURE-GROUPED TEST |
 | Training decisions and accuracy ceiling | experiment card and error taxonomy | DETECTOR COMPLETE |
 | Physical calibration/reprojection | calibration JSON and reprojection distribution | TOOLING PRESENT; PENDING physical capture |
