@@ -129,6 +129,7 @@ are committed under `weights/releases` and verified by SHA-256 reports.
 python tools/train_yolo.py --task detect --data data/processed/detect/data.yaml --epochs 15 --image-size 320 --batch 16 --device cpu --workers 0 --cache false --freeze 10 --patience 5 --run-name detect-real-v1
 python tools/evaluate_yolo.py --task detect --model runs/yolo/detect-real-v1/weights/best.pt --data data/processed/detect/data.yaml --split test --image-size 320 --output reports/detection_test_evaluation.json --overlays reports/failure_cases/detection
 python tools/benchmark_yolo.py --model runs/yolo/detect-real-v1/weights/best.pt --images data/processed/detect/images/test --device cpu --image-size 320 --warmup 10 --repeat 1 --output reports/runtime_detection_cpu.json
+python tools/generate_manual_review_example.py
 
 # Measured segmenter run:
 python tools/train_yolo.py --task segment --data data/processed/segment/data.yaml --epochs 20 --image-size 320 --batch 16 --device cpu --workers 0 --cache false --freeze 10 --patience 7 --run-name segment-real-v1

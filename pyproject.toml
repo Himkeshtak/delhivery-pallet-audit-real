@@ -26,6 +26,7 @@ ml = [
   "supervision>=0.26,<1",
 ]
 dev = [
+  "jsonschema>=4,<5",
   "pytest>=8,<10",
   "pytest-cov>=5,<8",
   "ruff>=0.9,<1",

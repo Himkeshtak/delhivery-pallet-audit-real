@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "assessment_id": "example-manual-review-001",
+  "created_at_utc": "2026-08-24T00:00:00+05:30",
+  "frame_id": "example-frame-without-physical-evidence",
+  "track_id": "example-track-001",
+  "pose": {
+    "available": false,
+    "x_m": null,
+    "y_m": null,
+    "theta_deg": null,
+    "visible_face": null,
+    "covariance_xy_m2": null,
+    "theta_std_deg": null,
+    "confidence": 0.0,
+    "reprojection_rmse_px": null,
+    "reasons": [
+      "calibration_reprojection_error_above_policy",
+      "rmse_px=999.000"
+    ]
+  },
+  "checks": [
+    {
+      "check_id": "SOP-PAL-03-1",
+      "name": "No box overhang above 3 cm",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "required metric evidence is missing",
+      "evidence": {}
+    },
+    {
+      "check_id": "SOP-PAL-03-2",
+      "name": "Load height at most 1.8 m",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "required metric evidence is missing",
+      "evidence": {}
+    },
+    {
+      "check_id": "SOP-PAL-03-3",
+      "name": "Columns aligned within 15 degrees",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "required metric evidence is missing",
+      "evidence": {}
+    },
+    {
+      "check_id": "SOP-PAL-03-4",
+      "name": "No box-size inversion",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "required probability evidence is missing",
+      "evidence": {}
+    },
+    {
+      "check_id": "SOP-PAL-03-5",
+      "name": "Load stretch-wrapped",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "stretch-wrap probability is missing",
+      "evidence": {}
+    },
+    {
+      "check_id": "SOP-PAL-03-6",
+      "name": "No visibly damaged or crushed box",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "required probability evidence is missing",
+      "evidence": {}
+    },
+    {
+      "check_id": "SOP-PAL-03-7",
+      "name": "Load centroid within 10 cm",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "required metric evidence is missing",
+      "evidence": {}
+    },
+    {
+      "check_id": "SOP-PAL-03-8",
+      "name": "No visible pallet damage",
+      "scope": "PARTIAL",
+      "verdict": "MANUAL_REVIEW",
+      "confidence": 0.0,
+      "reason": "required probability evidence is missing",
+      "evidence": {}
+    }
+  ],
+  "overall_verdict": "MANUAL_REVIEW",
+  "overall_confidence": 0.0,
+  "reasoning": [
+    "placement pose is not reliable",
+    "calibration_reprojection_error_above_policy",
+    "rmse_px=999.000"
+  ],
+  "model_versions": {
+    "detector": "detect-real-v1@36273b60fb817a0d",
+    "segmenter": "segment-real-v1@79aaaa6c147ef566",
+    "pose": "UNAVAILABLE:no-keypoint-labels",
+    "damage": "UNAVAILABLE:no-damage-labels"
+  },
+  "calibration_id": "missing-physical-calibration"
+}
