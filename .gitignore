@@ -15,12 +15,14 @@ data/processed/**
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 
-# Generated runs and model binaries are tracked by manifests/releases, not Git.
+# Generated runs stay local; only compact selected release checkpoints are committed.
 runs/**
 weights/**
 artifacts/**
 !runs/.gitkeep
 !weights/.gitkeep
+!weights/releases/
+!weights/releases/*.pt
 !artifacts/.gitkeep
 
 .env
@@ -30,3 +32,4 @@ artifacts/**
 *.engine
 *.pt
 *.pth
+!weights/releases/*.pt

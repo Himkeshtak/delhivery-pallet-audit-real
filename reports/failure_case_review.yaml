@@ -1,0 +1,37 @@
+review_schema_version: 1
+model: detect-real-v1
+split: test
+confidence_threshold: 0.25
+cases:
+  - rank: 1
+    image: images/test/pallet_detect_v1_6618b3fc7fb8aa661b22.jpg
+    overlay: reports/failure_cases/detection/worst_1_pallet_detect_v1_6618b3fc7fb8aa661b22.jpg
+    root_cause: >-
+      Stretch-wrap highlights, carton faces, printed labels, and gaps in the load
+      produce many rectangular structures that resemble the heavily represented
+      hole class. This is a model/domain false-positive failure, amplified by
+      using a fixed confidence threshold of 0.25.
+    corrective_action: >-
+      Add reviewed hard-negative loaded/wrapped pallets, calibrate class-specific
+      confidence thresholds, and suppress hole evidence outside a detected pallet
+      structure rather than treating every hole proposal independently.
+  - rank: 2
+    image: images/test/pallet_detect_v1_0eaa0971b5c5b48902d5.jpg
+    overlay: reports/failure_cases/detection/worst_2_pallet_detect_v1_0eaa0971b5c5b48902d5.jpg
+    root_cause: >-
+      A close-up stretch-wrap texture is labelled as a negative image, but bright
+      horizontal streaks trigger multiple hole predictions. This is a hard-negative
+      coverage and texture-domain failure.
+    corrective_action: >-
+      Mine wrap-only negatives, add glare/texture augmentations, and require a
+      supporting pallet detection before accepting structural hole predictions.
+  - rank: 3
+    image: images/test/pallet_detect_v1_539bdab44bd56d405b76.jpg
+    overlay: reports/failure_cases/detection/worst_3_pallet_detect_v1_539bdab44bd56d405b76.jpg
+    root_cause: >-
+      The image visibly contains a blue plastic pallet but has no ground-truth
+      instance. At least one apparent false positive is therefore an annotation
+      omission; the numerical false-positive count overstates model error here.
+    corrective_action: >-
+      Re-audit all negative holdout images and adjudicate plastic-pallet scope
+      before using them for final acceptance metrics.

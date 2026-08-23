@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import platform
 import time
 from datetime import datetime, timezone
@@ -11,6 +13,14 @@ from pathlib import Path
 import cv2
 
 from pallet_audit.evaluation import distribution
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        while chunk := handle.read(1024 * 1024):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def main() -> int:
@@ -25,6 +35,7 @@ def main() -> int:
     parser.add_argument("--repeat", type=int, default=3)
     parser.add_argument("--output", type=Path, default=Path("reports/runtime_yolo.json"))
     args = parser.parse_args()
+    os.environ.setdefault("YOLO_CONFIG_DIR", str(Path(".ultralytics").resolve()))
     try:
         import torch
         import ultralytics
@@ -70,7 +81,11 @@ def main() -> int:
     payload = {
         "benchmark_schema_version": 1,
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "model": str(args.model.resolve()),
+        "model": {
+            "file": args.model.name,
+            "bytes": args.model.stat().st_size,
+            "sha256": _sha256(args.model),
+        },
         "images": len(frames),
         "warmup_frames": args.warmup,
         "measured_frames": len(wall_ms),

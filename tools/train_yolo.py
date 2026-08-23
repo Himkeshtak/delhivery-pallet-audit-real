@@ -39,6 +39,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--batch", type=int, default=8)
     parser.add_argument("--device", default="auto")
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--workers", type=int, default=0)
+    parser.add_argument("--patience", type=int, default=20)
+    parser.add_argument("--freeze", type=int, default=0)
+    parser.add_argument("--cache", choices=("false", "ram", "disk"), default="ram")
     parser.add_argument("--run-name", required=True)
     parser.add_argument("--project", type=Path, default=Path("runs/yolo"))
     return parser.parse_args()
@@ -70,6 +74,10 @@ def main() -> int:
         device=device,
         seed=args.seed,
         deterministic=True,
+        workers=args.workers,
+        patience=args.patience,
+        freeze=args.freeze if args.freeze > 0 else None,
+        cache=False if args.cache == "false" else args.cache,
         project=str(args.project),
         name=args.run_name,
         exist_ok=False,
@@ -93,6 +101,10 @@ def main() -> int:
         "epochs": args.epochs,
         "image_size": args.image_size,
         "batch": args.batch,
+        "workers": args.workers,
+        "patience": args.patience,
+        "freeze": args.freeze,
+        "cache": args.cache,
         "device": str(device),
         "seed": args.seed,
         "git_commit": git_commit,

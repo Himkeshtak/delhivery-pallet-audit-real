@@ -2,17 +2,18 @@
 
 ## Measured development hardware
 
-The currently available runtime has PyTorch `2.8.0+cpu`, reports no CUDA device,
-and exposes 12 CPU inference threads. No trained real-data weights are available
-yet, so reporting end-to-end model latency now would be meaningless. The
-`benchmark_yolo.py` command records raw latency samples, percentiles, throughput,
-software versions, and hardware fingerprint once weights and a representative
-held-out image directory exist.
+The detection checkpoint was measured on Windows 11 with PyTorch `2.8.0+cpu`,
+no CUDA device, eight active inference threads, and an Intel Core Ultra 5 125U.
+Across all 262 test images after 10 warm-up frames, single-image end-to-end
+latency was 36.36 ms mean, 36.23 ms median, 38.60 ms p95, and 51.07 ms maximum.
+Measured throughput from total wall time was 27.50 FPS at 320 px. This includes
+in-memory preprocessing, detector inference, and postprocessing; it excludes
+decode, segmentation, pose geometry, anomaly scoring, tracking, and SOP logic.
 
 This is not a Jetson Orin Nano measurement. No external Jetson benchmark is
 copied into this report.
 
-## Target path: Jetson Orin Nano, 15 W, ≥15 FPS
+## Target path: Jetson Orin Nano, 15 W, at least 15 FPS
 
 The deployable path is YOLO11n pose + YOLO11n segmentation, geometry/SOP logic on
 CPU, EfficientAD-S only on visible crops, and ByteTrack/temporal fusion. Export
@@ -36,7 +37,7 @@ full system misses it, the change order is:
 3. batch visible crops for EfficientAD;
 4. reduce input resolution only if downstream metric-pose and SOP distributions
    remain within policy;
-5. defer Mask2Former and PatchCore—they are comparisons, not edge defaults.
+5. defer Mask2Former and PatchCore - they are comparisons, not edge defaults.
 
 ## Failure contract
 
@@ -46,4 +47,3 @@ occlusion, inadequate visible coverage, unstable temporal evidence, and stale
 tracks must surface as explicit reason codes. Confirmed visible failures remain
 failures; unknown evidence becomes `MANUAL_REVIEW`. The downstream consumer never
 has to infer failure from missing JSON fields.
-
