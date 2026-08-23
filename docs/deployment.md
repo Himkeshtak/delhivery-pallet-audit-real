@@ -13,6 +13,12 @@ decode, segmentation, pose geometry, anomaly scoring, tracking, and SOP logic.
 This is not a Jetson Orin Nano measurement. No external Jetson benchmark is
 copied into this report.
 
+The structural-part segmenter measured 59.14 ms mean, 59.23 ms median,
+61.67 ms p95, and 62.94 ms maximum over 105 test images, or 16.91 FPS alone.
+Adding the independently measured detector and segmenter means gives a 95.5 ms
+arithmetic sequential estimate (about 10.5 FPS), not a measured full-pipeline
+benchmark. The naive every-frame composition therefore misses the 15 FPS goal.
+
 ## Target path: Jetson Orin Nano, 15 W, at least 15 FPS
 
 The deployable path is YOLO11n pose + YOLO11n segmentation, geometry/SOP logic on

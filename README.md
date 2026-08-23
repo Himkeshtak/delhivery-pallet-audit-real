@@ -2,9 +2,9 @@
 
 > Status: both user-supplied real Roboflow exports are imported and audited.
 > Their original splits contain cross-split perceptual duplicates. The grouped
-> real-data detector is trained, independently evaluated, benchmarked, and
-> committed with hashed weights. Segmentation data is validated and is the next
-> training stage. No result below comes from synthetic data or borrowed hardware.
+> real-data detector and structural-part segmenter are trained, independently
+> evaluated, benchmarked, and committed with hashed weights. No result below
+> comes from synthetic data or borrowed hardware.
 
 This project implements one explainable pallet assessment per tracked pallet:
 metric floor pose with uncertainty, directed face/orientation, eight SOP checks
@@ -130,8 +130,9 @@ python tools/train_yolo.py --task detect --data data/processed/detect/data.yaml 
 python tools/evaluate_yolo.py --task detect --model runs/yolo/detect-real-v1/weights/best.pt --data data/processed/detect/data.yaml --split test --image-size 320 --output reports/detection_test_evaluation.json --overlays reports/failure_cases/detection
 python tools/benchmark_yolo.py --model runs/yolo/detect-real-v1/weights/best.pt --images data/processed/detect/images/test --device cpu --image-size 320 --warmup 10 --repeat 1 --output reports/runtime_detection_cpu.json
 
-# Remaining label-supported training:
-python tools/train_yolo.py --task segment --data data/processed/segment/data.yaml --run-name segment-real-v1
+# Measured segmenter run:
+python tools/train_yolo.py --task segment --data data/processed/segment/data.yaml --epochs 20 --image-size 320 --batch 16 --device cpu --workers 0 --cache false --freeze 10 --patience 7 --run-name segment-real-v1
+python tools/evaluate_yolo.py --task segment --model runs/yolo/segment-real-v1/weights/best.pt --data data/processed/segment/data.yaml --split test --image-size 320 --output reports/segmentation_test_evaluation.json
 python tools/train_yolo.py --task pose --data data/processed/pose/data.yaml --run-name pose-real-v1
 
 # Nominal visible crops versus separately labelled damaged holdout:
@@ -180,6 +181,32 @@ On Windows 11, PyTorch 2.8 CPU, eight inference threads, and an Intel Core Ultra
 5 125U, 262 single-image runs measured 36.36 ms mean, 36.23 ms median,
 38.60 ms p95, and 51.07 ms max end-to-end (27.50 FPS from total wall time).
 Decode and the rest of the perception/SOP pipeline are excluded.
+
+### Structural-part segmentation baseline
+
+The committed YOLO11n-seg checkpoint is
+[`weights/releases/segment-real-v1.pt`](weights/releases/segment-real-v1.pt)
+(5,961,764 bytes; SHA-256
+`79aaaa6c147ef5662f624e5db607f25fce0dea209b573f75c8c67554dccdcd0c`).
+It trained for 20 epochs/32.7 minutes on 841 real images and 2,955 polygons.
+
+| Split | Box P/R | Box mAP50 / mAP50-95 | Mask P/R | Mask mAP50 / mAP50-95 |
+|---|---:|---:|---:|---:|
+| Validation, 106 images / 363 instances | 0.795 / 0.428 | 0.554 / 0.343 | 0.631 / 0.317 | 0.384 / 0.158 |
+| Test, 105 images / 335 instances | 0.563 / 0.444 | 0.442 / 0.254 | 0.471 / 0.318 | 0.314 / 0.132 |
+
+Test mask mAP50-95 ranges from 0.506 for `pallet_pocket` to 0.000 for
+`pallet`; `pallet_front` reaches 0.269, while all remaining classes are at or
+below 0.111. The source has no `load` class and overlapping part semantics, so
+this checkpoint is evidence for a structural-part baseline only. It cannot
+support load overhang, centroid, or full-pallet boundary claims.
+
+Standalone segmentation latency over 105 test images is 59.14 ms mean,
+59.23 ms median, 61.67 ms p95, and 62.94 ms max (16.91 FPS). Arithmetic
+composition with the detector is about 95.5 ms mean, or 10.5 FPS; that is not a
+measured end-to-end pipeline and misses the 15 FPS target. Deployment therefore
+runs detection intermittently, tracks between detections, and schedules masks
+only for stable pallet tracks.
 
 ## Failure analysis - three worst cases
 

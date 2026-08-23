@@ -34,6 +34,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--base-commit", required=True)
     parser.add_argument("--published-weight", type=Path)
+    parser.add_argument("--clean-base", action="store_true")
     args = parser.parse_args()
 
     manifest = json.loads((args.run / "run_manifest.json").read_text(encoding="utf-8"))
@@ -56,8 +57,10 @@ def main() -> int:
         "run": args.run.name,
         "base_commit": args.base_commit,
         "working_tree_note": (
-            "Training CLI options were uncommitted at run start and are included in the "
-            "next stage commit; dataset preparation was exactly base_commit."
+            "Dataset preparation and training CLI were exactly base_commit."
+            if args.clean_base
+            else "Training CLI options were uncommitted at run start and are included in "
+            "the next stage commit; dataset preparation was exactly base_commit."
         ),
         "task": manifest["task"],
         "dataset": Path(manifest["data_yaml"]).parent.name,
