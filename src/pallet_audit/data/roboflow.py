@@ -22,6 +22,19 @@ class RoboflowDownloadError(RuntimeError):
     """Raised when an authenticated, pinned Roboflow export cannot be obtained."""
 
 
+def _local_env_api_key(path: Path = Path(".env")) -> str | None:
+    if not path.is_file():
+        return None
+    for raw_line in path.read_text(encoding="utf-8-sig").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        name, value = line.split("=", 1)
+        if name.strip() == "ROBOFLOW_API_KEY":
+            return value.strip().strip("\"").strip("'") or None
+    return None
+
+
 def sha256_file(path: Path, chunk_size: int = 1024 * 1024) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -155,7 +168,7 @@ def download_sources(
     overwrite: bool = False,
 ) -> list[Path]:
     config = load_sources(config_path)
-    credential = api_key or os.environ.get("ROBOFLOW_API_KEY")
+    credential = api_key or os.environ.get("ROBOFLOW_API_KEY") or _local_env_api_key()
     if not credential:
         raise RoboflowDownloadError(
             "ROBOFLOW_API_KEY is missing. Create a private key in Roboflow settings, "

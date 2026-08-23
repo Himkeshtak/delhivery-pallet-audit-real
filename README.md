@@ -9,7 +9,15 @@ metric floor pose with uncertainty, directed face/orientation, eight SOP checks
 with confidence and `PASS` / `FAIL` / `MANUAL_REVIEW`, and overall reasoning.
 It is organized in the same order as the assignment rubric.
 
-## 1. Dataset and detection (30%)
+## Approach and significant decisions
+
+The design is split into measurable perception, geometry, evidence, and policy
+stages so a disputed decision can be reconstructed. The main costs are extra
+annotation layers, physical calibration/capture, multiple small models, and a
+conservative abstention rate. Those costs are preferred to a confident but
+untraceable end-to-end verdict.
+
+### 1. Dataset and detection (30%)
 
 The two user-selected Roboflow Universe version URLs are pinned in
 `configs/data_sources.yaml`. The canonical download format is COCO JSON because
@@ -25,7 +33,7 @@ AP/precision/recall and localization IoU/center-error distributions—not only a
 single average. The expected accuracy ceiling and training decisions will be
 documented beside the measured results.
 
-## 2. Pose estimation (35%)
+### 2. Pose estimation (35%)
 
 The final design uses 8–12 human-verified structural pallet keypoints, topology
 refinement, and a calibrated floor homography. It reports metric `(x, y)`,
@@ -35,14 +43,14 @@ camera tilt, short/long-range behavior, and the operating envelope for
 `±2 cm / ±3°` will only be filled from a physically measured evaluation set.
 Low observability or out-of-envelope inputs must return `MANUAL_REVIEW`.
 
-## 3. SOP verification (25%)
+### 3. SOP verification (25%)
 
 All eight checks from the assignment will be represented in the versioned JSON
 contract. Each check has evidence, confidence, thresholds, pose/load weighting,
 and a three-way verdict. The implemented subset and any unimplemented checks
 will be stated explicitly; missing evidence never silently becomes a pass.
 
-## 4. Deployment (10%)
+### 4. Deployment (10%)
 
 The intended target is Jetson Orin Nano 15 W at at least 15 FPS. The README will
 report actual measured development-hardware latency and memory, then describe
@@ -129,7 +137,15 @@ held-out set. The results tables, distributions, three worst cases with images
 and root causes, calibration envelope, runtime, and memory remain pending the
 authenticated dataset download and physical calibration/evaluation capture.
 
-## Could not finish yet and why
+## Failure analysis — three worst cases
+
+Pending real held-out inference. `evaluate_pose.py` ranks the three worst cases
+by normalized translation-plus-rotation error; the final report will include
+each original image, prediction overlay, error values, observability state, and
+root cause. Placeholder or training-set examples are deliberately not shown as
+“worst cases.”
+
+## What I couldn't finish and why
 
 - Roboflow's official export API returned `401` for both public version URLs
   because exports require an API key. No `ROBOFLOW_API_KEY` is present locally.
@@ -139,8 +155,10 @@ authenticated dataset download and physical calibration/evaluation capture.
   it cannot be inferred from internet images alone.
 - Jetson latency requires the stated Jetson hardware; other machines' numbers
   will not be presented as ours.
+- The required five-minute screen recording depends on the real-data pipeline
+  and is therefore pending; `docs/demo_script.md` defines the evidence to record.
 
-## AI tools and error caught
+## AI tool usage
 
 Codex is being used for repository implementation, dataset auditing, tests, and
 documentation. The critical error caught during review was that the earlier
