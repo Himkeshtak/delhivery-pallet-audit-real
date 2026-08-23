@@ -1,0 +1,41 @@
+{
+  "seed": 42,
+  "samples": [
+    {
+      "split": "train",
+      "source_image": "images/train/scd_oscd_8f4ace2eb1e092b898ea.jpg",
+      "instances": 7,
+      "overlay": "reports/dataset_samples/carton_scd/train_1.jpg"
+    },
+    {
+      "split": "train",
+      "source_image": "images/train/scd_oscd_f82acb3a928baab79140.jpg",
+      "instances": 30,
+      "overlay": "reports/dataset_samples/carton_scd/train_2.jpg"
+    },
+    {
+      "split": "valid",
+      "source_image": "images/valid/scd_oscd_44de96cff5c1bdbc1896.jpg",
+      "instances": 20,
+      "overlay": "reports/dataset_samples/carton_scd/valid_1.jpg"
+    },
+    {
+      "split": "valid",
+      "source_image": "images/valid/scd_oscd_bf97cfa0984ce432b8f6.jpg",
+      "instances": 25,
+      "overlay": "reports/dataset_samples/carton_scd/valid_2.jpg"
+    },
+    {
+      "split": "test",
+      "source_image": "images/test/scd_oscd_6eb70dd3c7846d44b32b.jpg",
+      "instances": 18,
+      "overlay": "reports/dataset_samples/carton_scd/test_1.jpg"
+    },
+    {
+      "split": "test",
+      "source_image": "images/test/scd_oscd_d96f260640163e5053a6.jpg",
+      "instances": 14,
+      "overlay": "reports/dataset_samples/carton_scd/test_2.jpg"
+    }
+  ]
+}
