@@ -1,18 +1,24 @@
 # Dataset card
 
-Status: metadata audit in progress; image-level statistics are intentionally
-blank until the authenticated exports are downloaded and hashed.
+Status: the two user-supplied, pinned COCO archives were imported, hashed, and
+audited on 2026-08-24. Raw images remain gitignored. The supplier splits are
+not approved for headline evaluation because perceptual duplicates cross split
+boundaries; a leakage-controlled grouped split is the next preparation gate.
 
 ## Sources and selection rationale
 
 | Source ID | Pinned version URL | Intended role | Verified publicly |
 |---|---|---|---|
-| `pallet_detect_v1` | https://universe.roboflow.com/rj-xvfw4/pallet-ff5lh-fp7tw/dataset/1 | pallet/structure detection | workspace advertises a 4.4k-image object-detection project; exact redirect and archive metadata pending |
-| `plh_c_1_v1` | https://universe.roboflow.com/rj-xvfw4/plh-c-1-veibf/dataset/1 | instance-mask candidate | workspace advertises a 412-image instance-segmentation project named PLH-C.1; exact archive metadata pending |
+| `pallet_detect_v1` | https://universe.roboflow.com/rj-xvfw4/pallet-ff5lh-fp7tw/dataset/1 | pallet/fork-hole detection | 2,208 images; 63,624 boxes; COCO detection |
+| `plh_c_1_v1` | https://universe.roboflow.com/rj-xvfw4/plh-c-1-veibf/dataset/1 | pallet-part instance masks | 1,052 images; 3,653 polygons; COCO instance segmentation |
 
-These sources were selected by the assignment author/user because they contain
-real pallet imagery. We still audit duplicates, label meaning, preprocessing,
-license files, and distribution fit before combining them.
+These sources were selected by the assignment author/user and are the sample
+projects named in the assignment. They contain real pallet imagery and existing
+geometry labels, reducing acquisition and first-pass annotation cost. That
+choice costs domain control: camera placement, pallet/load mix, distances, and
+lighting do not match the specified pillar camera; label taxonomies are noisy;
+the exported data contains augmentations and split leakage; and neither source
+contains metric pose, directed face, load-SOP, or damage ground truth.
 
 ## Format and provenance policy
 
@@ -38,17 +44,42 @@ license files, and distribution fit before combining them.
 SAM 2 is an annotation accelerator only. Propagated masks are never accepted as
 ground truth without human correction and approval.
 
-## Counts and split
+## Counts and supplier split audit
 
-Pending authenticated download and audit. The final table will include images,
-instances, class counts, unique groups, duplicates removed, train/validation/
-test counts, and assignment-domain holdout counts.
+| Source | Train | Validation | Test | Total images | Total annotations |
+|---|---:|---:|---:|---:|---:|
+| Detection | 1,932 | 184 | 92 | 2,208 | 63,624 boxes |
+| Segmentation | 960 | 56 | 36 | 1,052 | 3,653 polygons |
 
-## Annotation cost
+Detection instances: `hole` 40,555 and `pallet` 23,069. The declared
+`pallet-hole` category has zero instances. Segmentation instances: `front` 156,
+`hole` 336, `hole_left` 159, `hole_right` 158, `pallet` 167,
+`pallet_front` 718, `pallet_pocket` 1,478, and `wood` 481. The declared
+`warehouse-Pallets-and-palle-U3mp` category has zero instances.
 
-Pending a timed pilot on 50 representative images. The estimate will report
-minutes per box, mask, keypoint skeleton, damage review, and physical pose label,
-plus reviewer time and total cost assumptions.
+All image references resolve, every box passes boundary/area validation, all
+3,653 segmentation annotations contain polygons, and no byte-identical image
+crosses a split. However, 110 detection perceptual-hash groups and 5
+segmentation groups cross supplier split boundaries. Several filenames also
+identify augmented variants of the same capture. Consequently, supplier test
+metrics would be optimistic and will not be reported as the final holdout.
+
+The processed split groups source identity, augmentation family, and detected
+near-duplicates before assigning approximately 80/10/10 train/validation/test.
+The group—not an image—is the unit of assignment. Split manifests preserve the
+raw source ID and original split. A separately captured assignment-domain set
+from the stated fixed camera is still required for metric pose and SOP claims.
+
+## Sourcing and annotation cost
+
+The archives were available under CC BY 4.0, so the direct acquisition fee was
+zero. Existing boxes and polygons avoided first-pass labelling, but their
+taxonomy normalization, leakage removal, and quality review are real engineering
+costs. No timed labelling pilot has been performed, so a rupee/hour estimate
+would be fabricated. Before commissioning pose/damage labels, the protocol
+requires a timed 50-image pilot reporting median and p95 minutes for boxes,
+masks, keypoint skeletons, damage review, physical pose measurement, and second
+review.
 
 ## Known and anticipated biases
 
@@ -62,10 +93,15 @@ plus reviewer time and total cost assumptions.
   mandatory.
 - Small segmentation sets may not support a reliable Mask2Former comparison.
 
-## License and attribution
+## License, attribution, and immutable archives
 
-The final card will quote license metadata shipped in each archive and link to
-the project page. Public search currently reports CC BY 4.0 for the related
-PLH-C project; this must be confirmed for the exact two version archives before
-use or redistribution.
+Both exact archives ship `README.dataset.txt` declaring `License: CC BY 4.0`
+and attribution to a Roboflow user. Project links are in the source table.
+Archive SHA-256 values are:
 
+- Detection: `ea001f9d73ce0c8a5ec2907dacf766dd3f8f3f86b8cf09855c419aea5b21e967`
+- Segmentation: `191964d0fc13bfe7b8dcf65201149e3cc75a6932e38dafa96142faa3798c2b7e`
+
+The images/archives are not redistributed through Git. Per-file hashes and
+source metadata live in each ignored raw directory's `manifest.json`; the
+committed aggregate audit is `reports/dataset_audit.json`.

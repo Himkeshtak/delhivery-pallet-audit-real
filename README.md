@@ -1,8 +1,10 @@
 # Delhivery Pallet Audit — real-data implementation
 
-> Status: repository initialized; Roboflow exports and all measured results are
-> blocked until `ROBOFLOW_API_KEY` is supplied. This repository deliberately
-> contains no synthetic training result and no unmeasured hardware claim.
+> Status: both user-supplied real Roboflow exports are imported and audited.
+> Their original splits contain cross-split perceptual duplicates, so grouped
+> leakage-controlled preparation is required before headline training. This
+> repository contains no synthetic training result and no unmeasured hardware
+> claim.
 
 This project implements one explainable pallet assessment per tracked pallet:
 metric floor pose with uncertainty, directed face/orientation, eight SOP checks
@@ -19,13 +21,11 @@ untraceable end-to-end verdict.
 
 ### 1. Dataset and detection (30%)
 
-The two user-selected Roboflow Universe version URLs are pinned in
+The two assignment-listed Roboflow Universe version URLs are pinned in
 `configs/data_sources.yaml`. The canonical download format is COCO JSON because
-it preserves category metadata and bounding boxes without coupling the source
-archive to a trainer. A deterministic preparation step will convert audited
-records to YOLO format. Dataset counts, splits, label rules, cost assumptions,
-biases, duplicates, and provenance will be recorded in `DATASET.md` after the
-archives are downloaded.
+it preserves category metadata, boxes, and polygons without coupling the source
+archive to a trainer. `DATASET.md` records the measured counts, sourcing cost,
+label rules, biases, licenses, hashes, and the supplier-split leakage finding.
 
 Detection and localization will be reported separately on a source-grouped,
 held-out test split that differs from training. Reports will contain per-class
@@ -104,6 +104,8 @@ python -m pip install -e ".[dev]"
 Copy-Item .env.example .env
 # Put your Roboflow private API key in .env, then:
 python tools/download_roboflow.py --config configs/data_sources.yaml
+# Or, for ZIPs downloaded through the Roboflow UI:
+python tools/import_local_archives.py
 python tools/audit_dataset.py
 ```
 
@@ -132,10 +134,15 @@ python tools/evaluate_pose.py --predictions data/holdout/pose_predictions.csv
 
 ## Results
 
-No result is claimed before it is measured on the real, leakage-controlled
-held-out set. The results tables, distributions, three worst cases with images
-and root causes, calibration envelope, runtime, and memory remain pending the
-authenticated dataset download and physical calibration/evaluation capture.
+The raw-data audit measured 2,208 detection images with 63,624 boxes and 1,052
+segmentation images with 3,653 polygons. File/task integrity gates pass and no
+byte-identical image crosses a split. The supplier splits fail the independence
+gate: 110 detection and 5 segmentation perceptual-hash groups cross split
+boundaries. Those splits are therefore excluded from headline accuracy claims.
+
+Model distributions, three worst cases, metric calibration envelope, runtime,
+and memory remain pending leakage-controlled model training and, for physical
+pose/SOP claims, a separately measured assignment-domain capture.
 
 ## Failure analysis — three worst cases
 
@@ -147,10 +154,9 @@ root cause. Placeholder or training-set examples are deliberately not shown as
 
 ## What I couldn't finish and why
 
-- Roboflow's official export API returned `401` for both public version URLs
-  because exports require an API key. No `ROBOFLOW_API_KEY` is present locally.
-- The advertised source tasks must be verified from the downloaded metadata.
-  Detection boxes cannot be relabeled as pose keypoints, masks, or damage truth.
+- The supplied datasets cover detection and instance segmentation only.
+  Detection boxes/polygons cannot be relabelled as pose keypoints, metric pose,
+  load dimensions, wrap state, or damage truth.
 - Metric pose accuracy requires ruler/tape measurements and camera calibration;
   it cannot be inferred from internet images alone.
 - Jetson latency requires the stated Jetson hardware; other machines' numbers

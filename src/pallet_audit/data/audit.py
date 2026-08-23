@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from collections import Counter, defaultdict
 from collections.abc import Iterable
 from dataclasses import dataclass
@@ -21,16 +22,23 @@ class AnnotationFile:
     path: Path
 
 
+def _filesystem_path(path: Path) -> str:
+    resolved = str(path.resolve())
+    if os.name == "nt" and not resolved.startswith("\\\\?\\"):
+        return "\\\\?\\" + resolved
+    return resolved
+
+
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
-    with path.open("rb") as handle:
+    with open(_filesystem_path(path), "rb") as handle:
         while chunk := handle.read(1024 * 1024):
             digest.update(chunk)
     return digest.hexdigest()
 
 
 def _dhash(path: Path, size: int = 8) -> str:
-    with Image.open(path) as image:
+    with Image.open(_filesystem_path(path)) as image:
         gray = image.convert("L").resize((size + 1, size))
         pixels = list(gray.getdata())
     bits = []
@@ -76,7 +84,7 @@ def _resolve_image(annotation_path: Path, file_name: str) -> Path:
         annotation_path.parent / Path(file_name).name,
     ]
     for candidate in candidates:
-        if candidate.is_file():
+        if os.path.isfile(_filesystem_path(candidate)):
             return candidate
     raise AuditFailure(f"Missing image referenced by {annotation_path}: {file_name}")
 
@@ -179,6 +187,11 @@ def audit_coco_export(root: Path) -> dict[str, Any]:
     cross_split_exact = [
         group for group in exact_groups if len({record["split"] for record in group["files"]}) > 1
     ]
+    cross_split_visual = [
+        group
+        for group in visual_groups
+        if len({record["split"] for record in group["files"]}) > 1
+    ]
     inferred_task = "object-detection"
     if task_signals["polygon"]:
         inferred_task = "instance-segmentation"
@@ -187,7 +200,7 @@ def audit_coco_export(root: Path) -> dict[str, Any]:
 
     return {
         "audit_schema_version": 1,
-        "root": str(root.resolve()),
+        "root": root.name,
         "annotation_files": [
             {"split": item.split, "path": item.path.relative_to(root).as_posix()}
             for item in annotation_files
@@ -205,11 +218,13 @@ def audit_coco_export(root: Path) -> dict[str, Any]:
             "exact_groups": exact_groups,
             "visual_hash_groups": visual_groups,
             "cross_split_exact_groups": cross_split_exact,
+            "cross_split_visual_hash_groups": cross_split_visual,
         },
         "gates": {
             "all_references_resolve": True,
             "all_boxes_valid": True,
             "cross_split_exact_duplicates": len(cross_split_exact),
+            "cross_split_visual_hash_duplicates": len(cross_split_visual),
         },
     }
 

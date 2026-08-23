@@ -22,6 +22,10 @@ class RoboflowDownloadError(RuntimeError):
     """Raised when an authenticated, pinned Roboflow export cannot be obtained."""
 
 
+class LocalArchiveError(RuntimeError):
+    """Raised when a supplied local export cannot be imported safely."""
+
+
 def _local_env_api_key(path: Path = Path(".env")) -> str | None:
     if not path.is_file():
         return None
@@ -101,6 +105,13 @@ def _download(url: str, destination: Path, timeout: int = 180) -> None:
 
 def _safe_extract(archive: Path, destination: Path) -> None:
     destination_resolved = destination.resolve()
+
+    def writable_path(path: Path) -> str:
+        resolved = str(path.resolve())
+        if os.name == "nt" and not resolved.startswith("\\\\?\\"):
+            return "\\\\?\\" + resolved
+        return resolved
+
     with zipfile.ZipFile(archive) as bundle:
         for member in bundle.infolist():
             member_path = (destination / member.filename).resolve()
@@ -110,7 +121,72 @@ def _safe_extract(archive: Path, destination: Path) -> None:
             )
             if not within_destination:
                 raise RoboflowDownloadError(f"Unsafe ZIP member rejected: {member.filename}")
-        bundle.extractall(destination)
+            if member.is_dir():
+                os.makedirs(writable_path(member_path), exist_ok=True)
+                continue
+            os.makedirs(writable_path(member_path.parent), exist_ok=True)
+            with bundle.open(member) as source, open(writable_path(member_path), "wb") as target:
+                shutil.copyfileobj(source, target, length=1024 * 1024)
+
+
+def import_source_archive(
+    source: Source,
+    archive: Path,
+    output_root: Path,
+    overwrite: bool = False,
+) -> Path:
+    """Verify and safely import a user-downloaded, pinned Roboflow ZIP export."""
+    archive = archive.resolve()
+    if not archive.is_file():
+        raise LocalArchiveError(f"Local archive does not exist: {archive}")
+
+    destination = output_root / source.id
+    manifest_path = destination / "manifest.json"
+    if manifest_path.exists() and not overwrite:
+        return destination
+    if destination.exists() and not overwrite:
+        raise LocalArchiveError(
+            f"Destination already exists without a completed manifest: {destination}"
+        )
+
+    try:
+        with zipfile.ZipFile(archive) as bundle:
+            bad_member = bundle.testzip()
+    except zipfile.BadZipFile as error:
+        raise LocalArchiveError(f"Invalid ZIP archive: {archive}") from error
+    if bad_member is not None:
+        raise LocalArchiveError(f"ZIP CRC check failed for member: {bad_member}")
+
+    if destination.exists() and overwrite:
+        shutil.rmtree(destination)
+    destination.mkdir(parents=True, exist_ok=False)
+    try:
+        try:
+            _safe_extract(archive, destination)
+        except RoboflowDownloadError as error:
+            raise LocalArchiveError(str(error)) from error
+        archive_hash = sha256_file(archive)
+        try:
+            archive_reference = archive.relative_to(output_root.resolve()).as_posix()
+        except ValueError:
+            archive_reference = archive.name
+        manifest = {
+            "manifest_schema_version": 1,
+            "imported_at_utc": datetime.now(timezone.utc).isoformat(),
+            "source": asdict(source),
+            "format": "coco",
+            "archive": {
+                "path": archive_reference,
+                "bytes": archive.stat().st_size,
+                "sha256": archive_hash,
+            },
+            "files": _file_manifest(destination),
+        }
+        manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    except Exception:
+        shutil.rmtree(destination, ignore_errors=True)
+        raise
+    return destination
 
 
 def _file_manifest(root: Path) -> list[dict[str, Any]]:

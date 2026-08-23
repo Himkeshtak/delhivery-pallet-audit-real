@@ -20,6 +20,7 @@ class Source:
     url: str
     expected_task: str
     allowed_licenses: tuple[str, ...]
+    local_archive: str | None = None
 
 
 @dataclass(frozen=True)
@@ -71,7 +72,9 @@ def load_sources(path: Path) -> DataSources:
                 url=str(_required(item, "url", context)),
                 expected_task=str(_required(item, "expected_task", context)),
                 allowed_licenses=tuple(str(x) for x in item.get("allowed_licenses", [])),
+                local_archive=(
+                    str(item["local_archive"]) if item.get("local_archive") else None
+                ),
             )
         )
     return DataSources(schema_version, canonical_format, tuple(sources))
-

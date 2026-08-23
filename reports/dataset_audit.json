@@ -1,0 +1,5262 @@
+{
+  "audit_schema_version": 1,
+  "sources": {
+    "pallet_detect_v1": {
+      "audit_schema_version": 1,
+      "root": "pallet_detect_v1",
+      "annotation_files": [
+        {
+          "split": "test",
+          "path": "test/_annotations.coco.json"
+        },
+        {
+          "split": "train",
+          "path": "train/_annotations.coco.json"
+        },
+        {
+          "split": "valid",
+          "path": "valid/_annotations.coco.json"
+        }
+      ],
+      "inferred_task": "object-detection",
+      "categories": [
+        {
+          "id": 0,
+          "name": "pallet-hole"
+        },
+        {
+          "id": 1,
+          "name": "hole"
+        },
+        {
+          "id": 2,
+          "name": "pallet"
+        }
+      ],
+      "images_by_split": {
+        "test": 92,
+        "train": 1932,
+        "valid": 184
+      },
+      "annotations_by_split": {
+        "test": 1133,
+        "train": 58748,
+        "valid": 3743
+      },
+      "instances_by_class": {
+        "hole": 40555,
+        "pallet": 23069
+      },
+      "annotation_signals": {
+        "bbox": 63624
+      },
+      "duplicates": {
+        "exact_groups": [],
+        "visual_hash_groups": [
+          {
+            "fingerprint": "661c56dc6d33cfd4",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083703_jpg.rf.830204fb356aea922c97ce423e4daa75.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083703_jpg.rf.2e3fe39e853983a4fd50a59c54220dbd.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "96f2d5266603c109",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083852_jpg.rf.a25cde9f97742903914d7de6489eb49f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083852_jpg.rf.78a7aa8458026a1bd794c896d6ca56ef.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083852_jpg.rf.6764706a080283f62432ce15219a225e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a9aaaaaaaaa692b6",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140509_jpg.rf.485ffc58730d9fa64e990256c9590175.jpg"
+              },
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140509_jpg.rf.01f6e1311e2d2dc0522864bd71376e78.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0556_jpg.rf.fb03218d941d6044748278364aa92db3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "52525a525252d2d2",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0554_jpg.rf.b332d2ed64b6e33fec659037928e5507.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140454_jpg.rf.ea48efe949bc828e4b9fce2b02d35479.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "66539486b2e0b396",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084319_jpg.rf.d45b9cab703a78871d6d6cbddea37723.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084319_jpg.rf.8de8b033c46d5bca648a0b5bb6130475.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084319_jpg.rf.7de3694e6fe6554168bd29488fa22da8.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b1b1cd2bc6ce0569",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083817_jpg.rf.a85fb909558196f733b2ef7b3f1edad3.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083817_jpg.rf.40eff8518462d46a502b63425976899c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083817_jpg.rf.294b345b044b3dccc2f1b888678ec58a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4f7153d2dd45a949",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_095904_jpg.rf.111ec364573a36472062331fd8233310.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_095904_jpg.rf.85ad293268069ee6ff6a2b6f60b85b07.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "524d332a8eacb8af",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_135249_jpg.rf.5710eec1f868a85eb857e1dda91e36bd.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0466_jpg.rf.f409336e77bab02e9add0990fe0c4102.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135249_jpg.rf.cd8939723a8936151d2f821bf8182a29.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "26e873575556f6d6",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140329_jpg.rf.2d01db6794a2d24bc6f87d4b66a851bf.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0540_jpg.rf.eb72e3226e3386ab6e41ea42e64ad982.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140329_jpg.rf.25f38086be0826de5dc4a9ef13f168ef.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "938ee1c942267d25",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084316_jpg.rf.3d506add91982c57b8919cf96cf113a5.jpg"
+              },
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084316_jpg.rf.629bdb3b73d3330c5a4c67f8fc67b7d9.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7c55534816173898",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0454_jpg.rf.d47fd8196daabc6e236a3484c2338ed9.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135042_jpg.rf.18af466bb0c2030d276dd5d72ce988db.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135042_jpg.rf.27ed7baeab9a63de9059fee79d4de280.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "aeaee873b2a59696",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140313_jpg.rf.0b049fc1a816f533555ff307312dce27.jpg"
+              },
+              {
+                "split": "test",
+                "path": "test/0536_jpg.rf.cf6c0a37b98a4c87c0d2cc27d3f73299.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140313_jpg.rf.a2a23e857a891edc711d79a33c1b3bd4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6c131053038da952",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_133054_jpg.rf.a97e756bf1a795e4f9eef7cf94fc4902.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133054_jpg.rf.326a29f7557fb1597916bb520de8377a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b4b97644960c4686",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084122_jpg.rf.eb7ee0104cd383ad6529f85638353f7f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084122_jpg.rf.5e26339518c20b76fdc194f5bb165f55.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8c0f1d1d89c63252",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250804_141322_jpg.rf.35c461a285e52aacf9e2df28f2dd824f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250804_141322_jpg.rf.c59c52ca04f024c2ffb57a6715f9ccea.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0438_jpg.rf.abc04259225b69987611bad4165dc601.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5a53336449d9474e",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_085036_jpg.rf.07b9450688cc607027a608ef70eb5878.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085036_jpg.rf.0a53b60c7909db6ae3e95339af9f8f87.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085036_jpg.rf.625c393dc3f45149e398a92d5a9665cd.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "139dc34a4a63b466",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083940_jpg.rf.cbc75470d15ef325e960c78e24405e3f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083940_jpg.rf.6d61662ecd798a7e32d1a17974bf8c46.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083940_jpg.rf.989f23ace26a03804cb5cc75d6792b1f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6753530ece949795",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_103953_jpg.rf.a8ab48efca2610101ab0a747701e4481.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103953_jpg.rf.768466342c5d4e825799e205d9852255.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103953_jpg.rf.7571342af8fb974483a6a4957d700933.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6045456c8aaa2a2a",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083832_jpg.rf.8dd45ae152b3fb7c13d9de4e411ae6df.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083832_jpg.rf.0b89e60a330ee949d154ad97da276b20.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6d6d6969494d4d4b",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/piles-wooden-cargo-pallets-stacked-pallet-warehouse-223996293_jpg.rf.d892047f3921340db5b6c24b2115d8ad.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/piles-wooden-cargo-pallets-stacked-pallet-warehouse-223996293_jpg.rf.70c0092bbf67deb33f196ca45a4ef499.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6d37be8cbcb7a4a6",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083546_jpg.rf.2be438f7fea8333bb05f617e664f7592.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083546_jpg.rf.6f192e68315cb417a5884ddbd4aa5899.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "92918d2808088989",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104140_jpg.rf.0870243a2c05517a9ab7e0cb80bbfe54.jpg"
+              },
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104140_jpg.rf.fcc75362bf41e7d15d7dec8c97595f77.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "46468bc8c9c84949",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104149_jpg.rf.7de17426c24d870576bc102e0840723a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104149_jpg.rf.ad7d093bd85334cb6b0a78b20303a001.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2d7773772e8c97b4",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0522_jpg.rf.cf9e171620309654f1643303f68d1b56.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140001_jpg.rf.4518adee06e6deb6b4f12c63acc5bbf8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140001_jpg.rf.4bfebc5a2921decf6dca7f8224e15712.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "435b666aebe3164a",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_085107_jpg.rf.9e6bbdca443872fab6bdc448325f6dee.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085107_jpg.rf.5ade37be4b2218d2d85198e79f6ebf92.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085107_jpg.rf.a9cad5a66e447b4c0ed51f30abc8cd04.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a1a5a5ada4b4a4a4",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/stack-wooden-pallets-industrial-warehousing-195336497_jpg.rf.a4fd13aba9bee0ec5f8501e79d949a53.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/stack-wooden-pallets-industrial-warehousing-195336497_jpg.rf.d9f7c786744253a66946fe073517d9ef.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9c93cd53b5bb8494",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_095854_jpg.rf.906d43e251150a9e211533eeee7503fb.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_095854_jpg.rf.0bf1eefa8ab4bf92a99fc3707440cd79.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0444_jpg.rf.59a406ad0a7bee39a05dac75b72f23b4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8948b6b0b170a42a",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083912_jpg.rf.befd332d637b8a3e5bf925fc6c7783e5.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083912_jpg.rf.cc35abbb61ea633a793fc014b2743f73.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083912_jpg.rf.1217cff894beff98d291db328fdb18f5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "65e5ede5a36ccd93",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083652_jpg.rf.7a68dd4804db031c76c2a25a129465fe.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083652_jpg.rf.e3913fdcf471760424740498ce4825f6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083652_jpg.rf.d01d04c895fbc8409c4c3e79009ceaaa.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b991aa96d65c115e",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084147_jpg.rf.980f7df0c01c10bdb2d1a28bf525bf71.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084147_jpg.rf.feef92a49b4f5064cfbe0570c309b05f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7761e4c5b2e5a1cc",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083648_jpg.rf.19d147f4f6aaa992f9a7dc1a42fbc6f1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083648_jpg.rf.701f80c969fb6470d88425e8f3d59625.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083648_jpg.rf.c8fbfc52dae8aaf0a5d61f08c9f684d4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "caca8ace68a82986",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104611_jpg.rf.ab641b60fa59d2ba9b5095d1e1d84c68.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104611_jpg.rf.eee0117988f74ef1f8ae49ed680350ce.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8bad246f119aed65",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0480_jpg.rf.54c7d05e9b98ab402eee5402741981d6.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135435_jpg.rf.c1db0171235ccb35ab00d81ae5bc079b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7833b2d5949467d3",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/stack-industrial-plastic-pallets-215737481_jpg.rf.b9243c60f6d03ae8425c23b2150908c6.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/stack-industrial-plastic-pallets-215737481_jpg.rf.294c6d077a5c4a9844d9115d897a090d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "666692a665b31393",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083512_jpg.rf.984c2437689f27cef21d379225ae346a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083512_jpg.rf.d9fbe714eced92c84dad40c70ce95119.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083512_jpg.rf.c4fe97ba69d0d79e95affa132722b751.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "365c0d73364e988b",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083620_jpg.rf.85675a72c1059ef3cd723482dd1bcaab.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083620_jpg.rf.6930fd9a7cba161f229cbb2a530c1823.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083620_jpg.rf.cf21bd76f911980061b80279fda0fac3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5661793712b68367",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0530_jpg.rf.d57fba30b574e163a67b3b091f88dd99.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140301_jpg.rf.abd93bd23bfc76a1e92b4a6aba3a35b1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "3774edcc6a8dd991",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083931_jpg.rf.308bd177cca3b6f8519c1493c387e418.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083931_jpg.rf.0f20690cc17eb8cb7c871470ceec9c11.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083931_jpg.rf.333eff24e0e771a1fd7e3b34fd205897.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "fcdada9e9b9bd8bc",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/B0EHAW_jpg.rf.f8190a036c821651b02b8c5dc6928965.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/B0EHAW_jpg.rf.9c34c47973ff793bbe5af4ac3c717b42.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "06370f4dc432360d",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083713_jpg.rf.ffb9d76069b2220758aefc70523e5071.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083713_jpg.rf.f92513e3e504a5819ad0f7d510ea7f06.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083713_jpg.rf.52166addba67eb53aefeeece3fbdfc23.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2c66225763381312",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104515_jpg.rf.c2a909e2feaae7bdc23150494ce1b516.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104515_jpg.rf.12600819b17ba7193a75d703141a747b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104515_jpg.rf.aa200ab32063c7d2572ab00fde6fc215.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "ada91979692d2e38",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083813_jpg.rf.c211edb7909ffd872859de8728afab37.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083813_jpg.rf.f965d445f178fd13afc68e5d9969b1d2.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083813_jpg.rf.ec25264cc06165f6f0d94cdad2af71e8.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "614491b5e5e57291",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140118_jpg.rf.ef79c1d87ae1c4704059acbef7f32ccc.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0526_jpg.rf.3529517a8b84f0104ef7ead156a6908e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1e2e16949cd67862",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250804_140843_jpg.rf.ba2f4d9038848c415bc0b5b6b98a7e13.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0434_jpg.rf.4ac261fe3f3e946753a01878299984fd.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "93a616aa3392cfc2",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084327_jpg.rf.921e5d91cf6f0e686aa69e464d27d7c1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084327_jpg.rf.9fc5cada74d26a0d76cfe11f58576e4e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "682831366b7a8bab",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0542_jpg.rf.62b96b8f576852124052f0adc41746e1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140340_jpg.rf.f47dc96f47352d193b8c8a346b537239.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140340_jpg.rf.1b9e47f1e5dc6ae2a602b6179fbb776a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d656b4b3cb0e8264",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_135918_jpg.rf.99d26f981c1389c5310cf491efdd81df.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0512_jpg.rf.b2a8d3308dbad45d584bb10048bc197b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135918_jpg.rf.8c8f5035baa56916c6385749037e7090.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7b4b4a8eaaa9ad99",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084631_jpg.rf.a622d60d0dd0a7ae27b7da9035295129.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084631_jpg.rf.7b01dcd7778c56d3d15f7347434516e2.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084631_jpg.rf.f6c2bd2d384081501fc6729d60a92b45.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "080f1939399930a2",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/stack-wooden-pallets-barrow-16271817_jpg.rf.2ec86bb94ae2a294154ff47307cf0b98.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/stack-wooden-pallets-barrow-16271817_jpg.rf.2cf268e8e9a704659378087b42b4a1b0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e88c113ce8319797",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135843_jpg.rf.1d134f07cb26fd368c9ef92c5f2822e8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0508_jpg.rf.f6babc877d6ec0104af515b48fd01ae3.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135843_jpg.rf.f680dc2d56d4f8beb4785abe8f2ba9ea.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e80f371121319292",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135214_jpg.rf.f15a59838b9224a5793ea12a09954541.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0464_jpg.rf.ce8231483f121ab1791749bb09f143ce.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "963696929232534b",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140401_jpg.rf.85af8a504ee68619e2e00b180666fcb3.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0546_jpg.rf.f3bbb85da7c52ffdd7fcb1b53d6851a9.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5454545454545454",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/wooden-pallets-stacks-cargo-shipping-60794370_jpg.rf.55aab7a153d10b517ce19c3056547293.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/pallets-stacks-psllets-stavks-yellow-wood-bavkground-wallpaper-43549800_jpg.rf.680eff98b88bf16f3f24c6b65847f346.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/pallets-stacks-psllets-stavks-yellow-wood-bavkground-wallpaper-43549800_jpg.rf.7968bc79d40fe096525f4a3302d880d5.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/wooden-pallets-stacks-cargo-shipping-60794370_jpg.rf.35e06940e3c5bfa4412425f63b143e9a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "608a55448ee4a595",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0482_jpg.rf.3bea9532d48f67089587572844f1367b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135442_jpg.rf.d9c5923432c24a8b41b68712586c026f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b7667f4b696d5967",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084127_jpg.rf.23b20d210f2a9dfaa559817abf72946a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084127_jpg.rf.2bd042f0ad36c753bd54cf6ac54b5e1b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b9f55d173e465a37",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083612_jpg.rf.f0abefbb1976dfb66a210acc0e5c5ecf.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083612_jpg.rf.e58cf35f5996f4f3984377fb5cc544a0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "466671195dd7c666",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135701_jpg.rf.003aeaf33822f87634c0b49f63882872.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135701_jpg.rf.40b974df1517ea2c720f7487e625fcf8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0496_jpg.rf.a798bf519e06598df1cef57b82d62a06.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e4dbb3a371e8e4e4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/pallets-wooden-near-warehouse-exactly-stacked-48801669_jpg.rf.63bab134694dbae5dfd502dad423d472.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/pallets-wooden-near-warehouse-exactly-stacked-48801669_jpg.rf.3307cd037dc87af0e85b4eda1b0e2954.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0069525308ca5b3a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/EA08YD_jpg.rf.54794f372172947f2ea9430c8eec6101.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/EA08YD_jpg.rf.d7e6b6bc7f2abb8720dd5bc3e90ff6ff.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5d3199b6a2a3b365",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084533_jpg.rf.059d7db9d14f04e65cccf2595d6a2640.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084533_jpg.rf.e2818e3118510d7263ac849a7fe4fa64.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "bbdeb6bef9d1040c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/product-jpeg_jpeg_jpg.rf.36fc657b9b313e2d361b91b40b205304.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/product-jpeg_jpeg_jpg.rf.4a17c8a2875e766876f5472b45e3a9bb.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b322561d31373653",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0494_jpg.rf.5ec3a2cdbed052ecb9caa743216814d0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135652_jpg.rf.5fb1cd63b238d6dcd31290ef4442d6da.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135652_jpg.rf.02dfe779d5c476404a35dc9a99d7e287.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1713131717171713",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/image24_jpg.rf.911b2c25433701e93736d5c1ba33781c.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/image24_jpg.rf.86915375a6211a914ae6f87faa4400fc.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "37371717b6969233",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/colored-pallets-front-sea-some-69409757_jpg.rf.71e615e46d39334e9f3461edd282f864.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/colored-pallets-front-sea-some-69409757_jpg.rf.31627cd0201f32337b175b6fcce92dc4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "074b355411313901",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/images57_jpeg_jpg.rf.1da6d48d56e2cbb6eeb7877573cc1795.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/images57_jpeg_jpg.rf.6a6f80ee24c44842ed5fc5973bb87099.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0d0d0d0d888c01e1",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/pallets-stacked-outside-warehouse-athens-greece-november-pallets-stacked-outside-warehouse-196429851_jpg.rf.3da90043ec7e90b528af705a3e99f60f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/pallets-stacked-outside-warehouse-athens-greece-november-pallets-stacked-outside-warehouse-196429851_jpg.rf.bba89db0f1dd14bd8899591404ad5012.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "67494534516719e5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083937_jpg.rf.cd12cabe38e8c23474a4457642d9c8db.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083937_jpg.rf.21ca74b34ba16a7596b9a4d8620c6573.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083937_jpg.rf.fd7597953ad2a7a539705eb68ceefe3d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e0632aaad5f4f1a4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084508_jpg.rf.d46842523dc040e0fefd0e5cd34d45a4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084508_jpg.rf.4c15d93bd8a6b954e92c727d9b042dc8.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084508_jpg.rf.17ed6cec8e6a8f288eebbd6bab09cbe5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4ea431312b2b5a65",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135455_jpg.rf.5d983fa5d9aefa5ba2a30d46a3985e8f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135455_jpg.rf.9fc4b33a0964f4672fd341f52b18fb20.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0484_jpg.rf.d7a557bea0bdd37a81b747d267be7118.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "30725355bfa9699d",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083840_jpg.rf.94ec4c86ac90157b448c2f0376d73ee0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083840_jpg.rf.f789c4a5c6cb7dffce9145134118fb56.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083840_jpg.rf.c67f6ed5bbdffe5e185909f8833d02ec.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e489665f1613b696",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084004_jpg.rf.fa3e3914f92bd9f7091d53a5bb67dde8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084004_jpg.rf.bce1dd405417915213a23ed1e9523ccb.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084004_jpg.rf.6cad5488713fdbe1f73026d35fce0fee.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b1f5135328496733",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0476_jpg.rf.aaf4dc2aa1f5eff6574f3ab00356c8a8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135406_jpg.rf.05d64545fd6d21d125db0262617ea4ac.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135406_jpg.rf.9e63aac18d2ab226ce18a17d7f5fdbe4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6849d673316046c6",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140131_jpg.rf.b8b86d78aec792277807710acf2533cf.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140131_jpg.rf.de79d0df7bfb76857342485f31c100c8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0528_jpg.rf.464ad40a012246661a1fd89560ffaff4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2ac46cb4c4757546",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084153_jpg.rf.466dff90f003567f8781b1729e1ee276.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084153_jpg.rf.54e463dbf886d2e522666d48db87ffcd.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084153_jpg.rf.66f86b4e66a609b54a559bf3d23f08ae.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2dcbcca6acd4e476",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085059_jpg.rf.689566ad4f9710d10a4ce79ddd24f7ba.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085059_jpg.rf.bfaeb3d10841bd31779164f153e90a9f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085059_jpg.rf.179c542eda4ac3df7a503490fb3d6bf5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9a9a1b2d64939a9a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/images119_jpeg_jpg.rf.c8055ed3a2743b417fd39299d257be99.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/images119_jpeg_jpg.rf.1af30e3ed11c872bc84114aaa4796310.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1ccc4d8acc323212",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104418_jpg.rf.c4b101cd90c823ad0e509d0ee3c27254.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104418_jpg.rf.731fd679e07d7bb22031c0153be5938b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "f77356c30a149ecc",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135951_jpg.rf.00ed0205c11db17bb39daf07f82b7ded.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135951_jpg.rf.233ef48d1f77b12120a4828ca223633c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0520_jpg.rf.dddb8580c29c5f0934fc28dabaeba5c0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "622b2a27a517bc2c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135939_jpg.rf.cbbc7b6a458ecf87dc2652d9f587f3ee.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135939_jpg.rf.6e30e8756bbdf861656d68d1f1614e62.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0516_jpg.rf.6e9cfb6de31f48e7c8acf83e57c3092f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "35a9c98826c1332a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083934_jpg.rf.70d03fa09e99012b764892a46389b472.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083934_jpg.rf.64301bbf117103ed791f1d34937955a1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2de4c6b759d8e6ee",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083605_jpg.rf.a19d333716f8ddcbeef44c28103cdf89.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083605_jpg.rf.1f1982d4970463bfe6fc260467ab6b24.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "aaaaaabab9aaaaa8",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/wood-pallets-4395709_jpg.rf.6788c823a9cece8e44bcfb0d531a3120.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/wood-pallets-4395709_jpg.rf.a254642df4e99e66f29bb1c0957391f5.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/wood-pallets-4395709_jpg.rf.63e41032ee5ba44241b14add52967ae2.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "68a9296929a929e8",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/2F6NX99_jpg.rf.92c10db1451e7720c74f68ce4121efc2.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/2F6NX99_jpg.rf.a89fc8cdfe4a99f2ec68f4ee05809dcf.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1696d4d464e4f474",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/images7_jpeg_jpg.rf.4d3586259be3d8e41259385e1568c7a3.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/images7_jpeg_jpg.rf.b5826b41b711247c2081c2209757f54c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "95b44d19338e4736",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0514_jpg.rf.8ac7e9eb19b08aab94b0611723e3b56a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135928_jpg.rf.d538e0b2d93b5a6f631341f35ab8997c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6e8bd5e53557d6da",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085055_jpg.rf.3f79f47125f7421450be4a2086a69e4b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085055_jpg.rf.ae6da091dd58badcf732186bbd012e75.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085055_jpg.rf.0ef49f22570de9227558accb7bc1d85b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a7bd92a50f6cb41b",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103934_jpg.rf.71939b4c4e4c6f37cf294087fe235654.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103934_jpg.rf.c517c7e3b80426354d5deca1e1d24cd0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "cba88c653783f0f1",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083921_jpg.rf.df4b9324ab6fb3557439dad397eaddb9.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083921_jpg.rf.caa55e99ee54127eed1195375e0f0c46.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "674256320598e4a4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083802_jpg.rf.fcc7bcd90bd3f6d271216e88071ccbe0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083802_jpg.rf.2d1ade0365bf7e655b36e545016fd6ea.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "669db38989190959",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140111_jpg.rf.79dd5b88f8ce403616b3dbaa061e3dc1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140111_jpg.rf.638011009c3b2e1c43b0111003361525.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0524_jpg.rf.fa6a50a7044ef1be3c2532ea1da63138.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "cd78e1b4958d8d8b",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083658_jpg.rf.35f57896ecb3da69c539951f406b9d89.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083658_jpg.rf.9f897e1335d2a29ccb24ff5cbe16422b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083658_jpg.rf.549c2f38a0f45cfe5b2394cbb4a0e68c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "71ea9aaec8cdade9",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084642_jpg.rf.1353a9d0a49348e7d4e8b0719ba5452f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084642_jpg.rf.f80fd96265ab0dee588e33ee547a9746.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "99b5bc4e37abe3b1",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084205_jpg.rf.ae8023bdbc5e5e81074382c3ef8ea86e.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084205_jpg.rf.de6451ca5f8450ca150b25f8cd506916.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084205_jpg.rf.e197a13df0b08ce58a467d6e4879d83c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "35353535353535b5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/wood-pallets-stacked-shipping-high-50542863_jpg.rf.ceed20db6e4b276e2977810c488d0855.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/wood-pallets-stacked-shipping-high-50542863_jpg.rf.0edfc684d6f32d843f454649a2bd6ad7.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/wood-pallets-stacked-shipping-high-50542863_jpg.rf.09d791feb54760d41fa95760b1d80de9.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "644c6372c994624a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135514_jpg.rf.a2a3d4791f3641cf6d97b0b1c3c503b1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135514_jpg.rf.0b39a4e5446b5fde3d0041c738b3cfdd.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6c3189ab87b2a3e1",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103857_jpg.rf.751ce6ccb461cd388411e79785b93aab.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103857_jpg.rf.5d3c1129eb749eda91a924799b1f671d.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103857_jpg.rf.ef2743f4fd3d956b2a3e4c0ec231e23d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9793abb2a33273d3",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084013_jpg.rf.aa27f4cb01597a4e81cca53b6c5c33a4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084013_jpg.rf.b089c50b40e41a6c7cf7645d0f1a5517.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b3734d282eae4eae",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104145_jpg.rf.eb412d1450ebb4d49ff9d08f52c3d331.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104145_jpg.rf.074296af9f260e4f665643f6f8f86bdb.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9ddcd4a56b6fb093",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083824_jpg.rf.00701148827cf334401de839e0abbfe8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083824_jpg.rf.ac512816a915deb77e226060651004e1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b3d6334c434e8faf",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0502_jpg.rf.af219cf2b41c9beed62ab78efcbf27b4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135804_jpg.rf.6c7682b9e41a96b1d5543fe4c51f2705.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4c0c08680c26262c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/T06AB9_jpg.rf.d7638e1f8c6648cdb347cddc0bca5687.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/T06AB9_jpg.rf.da2ad8aa73c35e796203288674f1024e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "f2c6e9690d939365",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135600_jpg.rf.4252703c942577388c5b812318539322.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0490_jpg.rf.cc13cab1b3c472a0c37b51443669cf0f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9397d6323f297c7e",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084550_jpg.rf.68840b04b099adf13147640f0e9a04e6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084550_jpg.rf.db8aff52e23106b071c5245b25a127df.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "265e9656eecc2889",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104544_jpg.rf.3258342b1cfb65f5b6a1973ab4fb4a73.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104544_jpg.rf.c34cb834e37e47b0aef672e84edaaa42.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104544_jpg.rf.8cac89a515b6f416f6079f5e17f3aaec.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5ca6b1b99a93b6a5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085049_jpg.rf.494cfa2d15904ac5542de2f670aad541.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085049_jpg.rf.e8d3598c8165ac8a72bd0b0cffd1af1e.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085049_jpg.rf.73f8f4c41e90a3c97e07427490160945.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b6f2e6f271256319",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083641_jpg.rf.21f2f541d3c3fcf86bbce2d9ce41b213.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083641_jpg.rf.5b962816040af442437b70bec7cd97d6.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e31293d1d1d1d959",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104135_jpg.rf.90d0e92ec7ec94e5c6db290ebeda76cf.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104135_jpg.rf.9d152f5bc076f851855b849a7ded3cf6.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "717050f13111d9d9",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/P94F69_jpg.rf.fef37b5409d4c55abf2f0c40ee092acb.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/P94F69_jpg.rf.598f1c5863c99dff9476b9e91a875746.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2e93968725214b63",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250804_140855_jpg.rf.518e147c1c5831adcc5f5283d08c43a8.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0436_jpg.rf.3b71e9fe6325aa31f56d9378335661a5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d5d5d595d595d4a8",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/DGKWTE_jpg.rf.b405031348acf4602bdb274184919d57.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/DGKWTE_jpg.rf.7c8669cb81e64458583ce6e479e07993.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1a53530a0dc9cdcc",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104502_jpg.rf.3f7d6d59e24572e03645e28aa33176bd.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104502_jpg.rf.968c79ed66b8d085a795eff9a131b2f1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104502_jpg.rf.4b48e12c2f6530e053e95cc200604a52.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8d1514713696cb59",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083828_jpg.rf.eb1e2cdf79137a638c87d1855ad0c1ce.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083828_jpg.rf.a3fb0e862394152d769790669c809ae9.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083828_jpg.rf.ce86abcbbe1902d8ba530194d34d09f4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "cde5c4dcccc5cd49",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/B8KK2H_jpg.rf.1d3266f234a4fb73a06db1f2ebf25308.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/B8KK2H_jpg.rf.5ca7842efba58361aac37ebc57b88eb1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7371ccf6f2e67232",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103925_jpg.rf.fc138e48f489ea3c78044d7659c7d6dd.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103925_jpg.rf.aba6b290f7ee93eb403d60d287cf5a70.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "cdededcd0f32186d",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083723_jpg.rf.d1617efff75454fbd5e23f3125476770.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083723_jpg.rf.762cc157102441c92ac06324d8769be3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e57173694df68c94",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0506_jpg.rf.2fc38f2ca2fd2e1099c017def00e04e4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135825_jpg.rf.2f1281e820d85d27106794a61d8d7109.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "63a11113a96a829e",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083835_jpg.rf.b0ab4d758df871eff7b6fec7324c4b2f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083835_jpg.rf.bf2ed0eb9f7038226ae06c7c22991eda.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083835_jpg.rf.56fb401570d6d1d43e8c572396df0360.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "cad6b2ba9296dbce",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/stacks-wooden-pallets-builders-yard-block-paved-surronded-lush-green-trees-overcast-day-169618883_jpg.rf.cd300cd9793ef7bac12570ccdeccec2c.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/stacks-wooden-pallets-builders-yard-block-paved-surronded-lush-green-trees-overcast-day-169618883_jpg.rf.35b7ea3be4f3a48dde6cc5a1cf03dbc9.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1f3a33b1aa96b27a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135117_jpg.rf.760d8f9fbdd1c8351ed839c436cc97da.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135117_jpg.rf.6b9ee50d58cee732e4cba351969fef1b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1155555555555155",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/C5D4TR_jpg.rf.b4e3d4620e2045272b79ad94f0c6ffec.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/C5D4TR_jpg.rf.dd5038bb88a8cb89370cb688fd7955c3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b39aeace8a0e26a6",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104551_jpg.rf.180516081426ed7586814ec4c4d910a6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104551_jpg.rf.25edee0dd3f7149576589b9bf0285960.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6fcfce6e4e4e4e6d",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/C5C21K_jpg.rf.4976cedf7589dd06235f73c4aac4e7ec.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/C5C21K_jpg.rf.30350a76b36c935c1625cb33203cae78.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2633332d2f465d89",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135257_jpg.rf.a843a46af4462850d7b8958a62e74ee6.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0468_jpg.rf.be01058b49a25dbf1bade2ad99f602ef.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c76d9191edd0d4d4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0544_jpg.rf.1551fcf9bcc51281013ba11ea137a996.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140356_jpg.rf.5d3c2b90c8bec747f8222e500e30d4e3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "536d5b19139451b4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085121_jpg.rf.f46c6dfb51a2f642cda446cb2d044623.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085121_jpg.rf.a59d88b4f749f19c2f99e6797584e1b4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0f928e0fcecc75b5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0448_jpg.rf.1c4a0ed87593183cd77a7199f18affc2.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_095913_jpg.rf.e62858b10bcdc6d9cb3605e8fc126532.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b4a4b0c8e4eececd",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/images128_jpeg_jpg.rf.daef01ba3f90787c2304bc9abf635531.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/images128_jpeg_jpg.rf.a8d54effeb58b67769c74bdd366169cb.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b58d71730a9bb3b6",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135912_jpg.rf.3a4890fa0c215d771dc28554f8bdbac2.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0510_jpg.rf.2006f467571f62406f6fb64e5f6806b6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135912_jpg.rf.91818e1175131c84446e1f24ffc2a686.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "54111b99b2968981",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084021_jpg.rf.9c0db9de1dbb868b13049db97a72d083.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084021_jpg.rf.77e621a3a619548178ee12ed5aea9bc9.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084021_jpg.rf.941995a4047fbff969c2023ea35e0fc1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c4163678e28d8d8c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133047_jpg.rf.458d3616695383d6e5716c5f63c495ff.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133047_jpg.rf.245b47ea6064cc97fc839d0f59d033f5.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_133047_jpg.rf.127551550e519d838e8da5476c133004.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9636b63636363721",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0558_jpg.rf.e585cfc43d42caba96180064b06d816b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140517_jpg.rf.640dd6b760c2b9b144dacd3f75f2c039.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b37388983296f1d6",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250804_141337_jpg.rf.855c2597cf13da5b3ca60b0fb9070b31.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250804_141337_jpg.rf.c12578ffcb38551596f954ac018d8c27.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "005b18867296cb1a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140418_jpg.rf.e81651efbc0991347dd442c2a06daad4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0550_jpg.rf.0d239e8705edefd93e82ce6714d0f1c6.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1571965252662828",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103910_jpg.rf.402965e3f7b8080dcfce641f4368322c.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103910_jpg.rf.6a2307ecabc441994ff5264a459ed5ed.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103910_jpg.rf.6d4075fbaeb5fbdf5da69da3475250b6.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "98b6a64b6989f949",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140427_jpg.rf.39f085b24a5d70fc765d5ca26a8f7439.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140427_jpg.rf.8dd868a3fa93173ba61fe3ea531619d8.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0552_jpg.rf.9eae4c6a934b2981642731c324746236.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a12b0b39e56468b4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/plastic-pallets-stacked-can-cause-accidents-factory-38453013_jpg.rf.18d352a9497941f8c0b10bf21e4ed9bc.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/plastic-pallets-stacked-can-cause-accidents-factory-38453013_jpg.rf.75569fd4156dc62bf891a120a36018b7.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/plastic-pallets-stacked-can-cause-accidents-factory-38453013_jpg.rf.7f51c5955cd954da34584555188ee11e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "95376c6c2d2d6c4b",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104115_jpg.rf.0b45b018f9e1ce763462193b6c146618.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104115_jpg.rf.511d24952e1287a0b188101d88b4737f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104115_jpg.rf.3c584224fb103a53dcc249c05a4689ba.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "30883371492b9692",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135326_jpg.rf.f776da302c8741a77c94c437e80ced8f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0472_jpg.rf.394b93091e8929729c38c9f735584c00.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135326_jpg.rf.49db00acdc7a7b36a48b57e17623d1df.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2d8c531d6deeae8c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083759_jpg.rf.41d418a9c2798343d386bef639869f12.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083759_jpg.rf.e5d00c7f0b223b25a590a705376ed02d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4d1f399b96e8abab",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135107_jpg.rf.be6fe3917ade1ccfdc5c730ef297da3d.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0456_jpg.rf.a0b34302c713eb0dfcdb8fd883dd5f95.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0409334365c51e23",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133052_jpg.rf.8b684996f113214024d7f7c2ab73d9c4.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_133052_jpg.rf.bd3568983c42521c8359410af346ed22.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5555555555555555",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/M44R3D_jpg.rf.e783ef58908d501a20c171bb02890920.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/M44R3D_jpg.rf.314f077f37d9875a7c38b0d2e64557a9.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "43c5e15125b37202",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083928_jpg.rf.9f6eb6d29374581de3a1e698bf6ec24f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083928_jpg.rf.72ae7d25165e7592775c8ed8fe40f9c2.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "51a39c9616168acb",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085113_jpg.rf.89893c354273c2fa0d5ac38df887aad0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085113_jpg.rf.151d711426ff81eb626df8943a482abc.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085113_jpg.rf.d05d055d9075978445df48cb5d89fe9d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5786c7b2b6b1ab69",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0532_jpg.rf.79661f85a39ad1c425df17a83db9aeaa.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140303_jpg.rf.6d7e264293e32920c5a9c6fe713f594a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d5d3d3d19b9b9293",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/cargo-pallets-portrait-format-469981_jpg.rf.dfb4a993076dd291d0f6069cf9074f44.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/cargo-pallets-portrait-format-469981_jpg.rf.490a9c8e4016a9a2fbf4984a4032512f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "cafef4b6ca4760e3",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084230_jpg.rf.b9bb8a26ff31e7077c5ba541c9618aa1.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084230_jpg.rf.58156c341829a380e9600ec204829e3f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084230_jpg.rf.b61f017ae77f119fd9992cb007154a27.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "199c9be6b3b3ef75",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083557_jpg.rf.4c069a01b9ed7dab2785f0151a2c13f7.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083557_jpg.rf.afd59a014463421e246d2d797582776c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083557_jpg.rf.ac148398332594e40528887bd2c1f493.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "127232b57172f292",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083706_jpg.rf.592d7f1205ab5b52ded48b2975186d95.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083706_jpg.rf.24406f2c960ba9ac68d1e09286a7cae9.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "186256b54c4a6e66",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083517_jpg.rf.47bf2aa04d9267f6f231a91fd255e1b0.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083517_jpg.rf.aed0b6815fa5810a253643b657cae076.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a394c1754d5a8ab9",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083847_jpg.rf.bf84c3b49d71cb4fe050c348fbd6e19a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083847_jpg.rf.bd28443dcf223c12211d0b316dc56247.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083847_jpg.rf.33ef77bd594804da3daf535dc39cbc61.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "56260b3f6f0666ed",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084246_jpg.rf.c89eb2ea8f948057531f575eb4440688.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084246_jpg.rf.a80988d217e69f14d9b0cc6ea48e0362.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2aa2ea99361c6d58",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083551_jpg.rf.2e15c085b3ebc78f8b386c29f37219db.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083551_jpg.rf.0fe24492686a9c5390c6323a2aa2d8ad.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "55106b2b69f9f978",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103755_jpg.rf.a34502b21a473939ed4cf588811ed045.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103755_jpg.rf.3a41d19505ce6c918ee11ef67b2f8194.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103755_jpg.rf.2fd61ba63eafa6c455836bb230a87d4a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a59be59133671063",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0442_jpg.rf.cdc23a16d7d89fc383c0d3008a20cad4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250804_141450_jpg.rf.7104bf7bb1acb7167731090b5602f26f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250804_141450_jpg.rf.226efb786590bd86c9fc8216b4736961.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c76752558c8b4316",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085042_jpg.rf.ddc13d1d673bfdcaafde0a66cf6242d6.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085042_jpg.rf.664446bbeb78fbb84d8e59e8d8f8ffbf.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085042_jpg.rf.add36933b65e867debf8ced36af4dc27.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d41696d692979397",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104105_jpg.rf.b2b3364fee96ee2f16f321178b67c45b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104105_jpg.rf.add17fd141fc6fd60ed55227ff6c181f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104105_jpg.rf.158535c8992f6c93beb743fd066e4e57.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9d4cfd1922eeac96",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104026_jpg.rf.68960638bf86fb90b31123ae7f0a7505.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104026_jpg.rf.42339dfbd0f5f1cc16538ca2024c9028.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "faebea0b035aec54",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/wooden-pallets-stacked-top-each-other-several-rows-warehouse-212717835-1-_jpg.rf.c902e1fee236925e6a6dd2e68742465d.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/wooden-pallets-stacked-top-each-other-several-rows-warehouse-212717835-1-_jpg.rf.da361c91e52c5f907088d143a9a1f96a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d0e2f0f0d3e3b6fe",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/a-pile-of-old-wooden-pallets-stacked-outdoors-painted-in-different-colors-2AYA42G_jpg.rf.a06479f1b5f18ad12da14d20f2696b9b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/a-pile-of-old-wooden-pallets-stacked-outdoors-painted-in-different-colors-2AYA42G_jpg.rf.903d963b4cbd22e957ebb229021ef3e1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "ca6b7375e4329091",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135810_jpg.rf.09cfef3a935bcea2f410557fc43f206a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0504_jpg.rf.6301014625fb8671f9e41c2b2ac58b84.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "55974a4ab5c45353",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084524_jpg.rf.da6c2335a8f08a95255e31d09b152b8a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084524_jpg.rf.7f740ebfa73f33f0610d778eaa71211d.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084524_jpg.rf.c9cb520c94ab815da05a7209b551022f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "565774b589096aea",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084141_jpg.rf.a03b92c43384cf6bbb672712df415276.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084141_jpg.rf.2d2737f75444354139ac0be87401131b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084141_jpg.rf.8f800748a09b8e4f6a7ca3505cbf45bf.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c4518e7b4d393333",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0452_jpg.rf.b7a0934d337acc4dad6825d7896a07bb.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_100118_jpg.rf.0eb55a17da23990427c61c1a08904907.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "342d338d84ac0e4e",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140310_jpg.rf.8c31c99e73706ba5f97377e592524ca7.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0534_jpg.rf.a7d54fc9507263169d3a10251206e867.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "aaaaaaabbb04a013",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/CXCF2J_jpg.rf.32a3b01cdff87ef3800cbbfcfbb522aa.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/CXCF2J_jpg.rf.380d094a7a205442011469a678029f45.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "bddd279296c18bb7",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084312_jpg.rf.b0ad5fe9738f048e6acd9cf9c81de2d3.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084312_jpg.rf.a07882bfa136ea94bd4bef5dc1be042e.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084312_jpg.rf.0c670f512262bd7436f34af5267c13da.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "aee6110de355f752",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084623_jpg.rf.2bb2c2296aea8b6281a29c6444cee048.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084623_jpg.rf.eec22f025cb36840c87b7da299b28242.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084623_jpg.rf.de2050d0a837716b75ff3a84503ddacf.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1604449496969694",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/M2F7DY_jpg.rf.539b58af2e6c108a090ae76eb88d8e0c.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/M2F7DY_jpg.rf.f2ee2698d3ebfbfeb70fb2f62e92c116.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "95959594b4959595",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/MHP9X3_jpg.rf.dd5895dc932b8832816d3b58fbda3ce1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/MHP9X3_jpg.rf.43fecc7e317ef02403f72c9541441c2f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d271636341617190",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084542_jpg.rf.f881dccebe81a0ae190b6559e45f9907.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084542_jpg.rf.37eda8e5ef9db7ed1b5ffdddf991edde.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9a4e3369b9955919",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0470_jpg.rf.a2a39ad86989755c0a14ac50125e4a0f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135305_jpg.rf.2d0c311ba0779b27643ea262efdf0376.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135305_jpg.rf.2043297cb2754b24c757e7759ef220f0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "3193d6466a6bf266",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083507_jpg.rf.6c6633634730ac6b14451075315dcb1a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083507_jpg.rf.a10a1e8518031fd390f55b5939b375e4.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083507_jpg.rf.f7fdc90eecc5ecc5d199f9d2eefa2d39.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6d4649af669d8c88",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083753_jpg.rf.39d040b06c8d4e7f04cccce470457c74.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083753_jpg.rf.d700bcc3c98f0076fbd633112bbba381.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a9ee8cae9e9eae34",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083631_jpg.rf.21b97ba198f693ac802570c8fb81de39.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083631_jpg.rf.aa3ef8eb8fd2e700647d95b4fff07eea.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083631_jpg.rf.a98f5b8f5fdef3a066d789199dd66d31.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4d6527b90e9a6072",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084331_jpg.rf.22eeabbfc974818a6e701d5f3ba7055a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084331_jpg.rf.0723c5c4ad2852dda44091d4c2e8c6ed.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1bb113cd74334c71",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084604_jpg.rf.d7964e2fd85de1a9bb464f4d805edd5a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084604_jpg.rf.ec5e5ab7dd6f564da5ebdf14126dfa8f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e9313069696dc9ab",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104050_jpg.rf.bb90ec912884bc3f8212a399c3cc772a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104050_jpg.rf.cf3854ff01a8cb59dc70796372c585e2.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104050_jpg.rf.a66da9f51fd5c7af0e7f20e4b2d39d3c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2d8cf36d29b18ded",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084335_jpg.rf.383320690f0cc420dce29fb9db4d2e5b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084335_jpg.rf.499cda626e7f45130c4996ffc441d03f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d0118fefec0e30b5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104129_jpg.rf.ec33e59fc13ef44ab1a5b70e46c25b80.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104129_jpg.rf.96ab8dd87936a996c6b1009419053da9.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "353535353db53536",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/EGBDW0_jpg.rf.113d19ad1d5f65e61990ec43f4eb2e06.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/EGBDW0_jpg.rf.789c7712234df7377f13ed37e00fdb4b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d6909e9a92f4e018",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/2E4A6GR_jpg.rf.9bd4a723977bd233d1da17e0eb723e83.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/2E4A6GR_jpg.rf.fc160e656034da1fc4b72ab532e41e76.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c07032932514660a",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_133059_jpg.rf.4a4fb313ea0acec567d1d1055b55764d.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_133059_jpg.rf.f6c8bbe5aa36111505ca80bcccd9c049.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_133059_jpg.rf.7450662bf49ef9c7fd819537fb1e58d3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6d6c7a33352c36ee",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083523_jpg.rf.11885fd891157f4f6d9f58e00839b793.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083523_jpg.rf.6d40ec1c3c1f8869437ae25bdf26d680.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083523_jpg.rf.9e712922f56d1d207e74086e12b9f777.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1f5157555185fcbd",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084108_jpg.rf.cf30e22aeddc5ce7409a1c71168a40ae.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084108_jpg.rf.d33bafce28d301d4756ce95260e1b227.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8d8d312b9a56066e",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/0518_jpg.rf.fb7b48f7469fb3c682b23a88a3b31f9e.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135943_jpg.rf.c4930c92898086713c9fb88c66411d54.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c031b8c8c8c9c989",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104125_jpg.rf.fd5786eb1b45d35f24b5df241c530cff.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104125_jpg.rf.008722ffa142808d45cc304e861f318f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104125_jpg.rf.947f8321e39e92a64badf30281732cb4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "50a82cac3c544d4c",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/wooden-pallets-stack-truck-freight-cargo-warehouse-transportation-logistics-industrial-157558754_jpg.rf.41d9e23395d2b486ea139c6869cb4ff3.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/wooden-pallets-stack-truck-freight-cargo-warehouse-transportation-logistics-industrial-157558754_jpg.rf.4bb8f85367d6857a3032bfea54709678.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "497786c94da925b5",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084515_jpg.rf.6c5f210c97280b0b8b653cb530382282.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084515_jpg.rf.03950fad3f34a2111f7a480713b5a3e5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "57999913b1093315",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085102_jpg.rf.2f4620fe5cbf57622a985467e0d4009c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085102_jpg.rf.81dacaa236e78e9b7c01fad6de5240ad.jpg"
+              }
+            ]
+          }
+        ],
+        "cross_split_exact_groups": [],
+        "cross_split_visual_hash_groups": [
+          {
+            "fingerprint": "661c56dc6d33cfd4",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083703_jpg.rf.830204fb356aea922c97ce423e4daa75.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083703_jpg.rf.2e3fe39e853983a4fd50a59c54220dbd.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "96f2d5266603c109",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083852_jpg.rf.a25cde9f97742903914d7de6489eb49f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083852_jpg.rf.78a7aa8458026a1bd794c896d6ca56ef.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083852_jpg.rf.6764706a080283f62432ce15219a225e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a9aaaaaaaaa692b6",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140509_jpg.rf.485ffc58730d9fa64e990256c9590175.jpg"
+              },
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140509_jpg.rf.01f6e1311e2d2dc0522864bd71376e78.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0556_jpg.rf.fb03218d941d6044748278364aa92db3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "52525a525252d2d2",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0554_jpg.rf.b332d2ed64b6e33fec659037928e5507.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140454_jpg.rf.ea48efe949bc828e4b9fce2b02d35479.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "66539486b2e0b396",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084319_jpg.rf.d45b9cab703a78871d6d6cbddea37723.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084319_jpg.rf.8de8b033c46d5bca648a0b5bb6130475.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084319_jpg.rf.7de3694e6fe6554168bd29488fa22da8.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b1b1cd2bc6ce0569",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083817_jpg.rf.a85fb909558196f733b2ef7b3f1edad3.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083817_jpg.rf.40eff8518462d46a502b63425976899c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083817_jpg.rf.294b345b044b3dccc2f1b888678ec58a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4f7153d2dd45a949",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_095904_jpg.rf.111ec364573a36472062331fd8233310.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_095904_jpg.rf.85ad293268069ee6ff6a2b6f60b85b07.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "524d332a8eacb8af",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_135249_jpg.rf.5710eec1f868a85eb857e1dda91e36bd.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0466_jpg.rf.f409336e77bab02e9add0990fe0c4102.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135249_jpg.rf.cd8939723a8936151d2f821bf8182a29.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "26e873575556f6d6",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140329_jpg.rf.2d01db6794a2d24bc6f87d4b66a851bf.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0540_jpg.rf.eb72e3226e3386ab6e41ea42e64ad982.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140329_jpg.rf.25f38086be0826de5dc4a9ef13f168ef.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7c55534816173898",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0454_jpg.rf.d47fd8196daabc6e236a3484c2338ed9.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135042_jpg.rf.18af466bb0c2030d276dd5d72ce988db.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135042_jpg.rf.27ed7baeab9a63de9059fee79d4de280.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "aeaee873b2a59696",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140313_jpg.rf.0b049fc1a816f533555ff307312dce27.jpg"
+              },
+              {
+                "split": "test",
+                "path": "test/0536_jpg.rf.cf6c0a37b98a4c87c0d2cc27d3f73299.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140313_jpg.rf.a2a23e857a891edc711d79a33c1b3bd4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6c131053038da952",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_133054_jpg.rf.a97e756bf1a795e4f9eef7cf94fc4902.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133054_jpg.rf.326a29f7557fb1597916bb520de8377a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b4b97644960c4686",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084122_jpg.rf.eb7ee0104cd383ad6529f85638353f7f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084122_jpg.rf.5e26339518c20b76fdc194f5bb165f55.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8c0f1d1d89c63252",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250804_141322_jpg.rf.35c461a285e52aacf9e2df28f2dd824f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250804_141322_jpg.rf.c59c52ca04f024c2ffb57a6715f9ccea.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0438_jpg.rf.abc04259225b69987611bad4165dc601.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5a53336449d9474e",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_085036_jpg.rf.07b9450688cc607027a608ef70eb5878.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085036_jpg.rf.0a53b60c7909db6ae3e95339af9f8f87.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085036_jpg.rf.625c393dc3f45149e398a92d5a9665cd.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "139dc34a4a63b466",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083940_jpg.rf.cbc75470d15ef325e960c78e24405e3f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083940_jpg.rf.6d61662ecd798a7e32d1a17974bf8c46.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083940_jpg.rf.989f23ace26a03804cb5cc75d6792b1f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6753530ece949795",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_103953_jpg.rf.a8ab48efca2610101ab0a747701e4481.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103953_jpg.rf.768466342c5d4e825799e205d9852255.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103953_jpg.rf.7571342af8fb974483a6a4957d700933.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6045456c8aaa2a2a",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083832_jpg.rf.8dd45ae152b3fb7c13d9de4e411ae6df.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083832_jpg.rf.0b89e60a330ee949d154ad97da276b20.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6d6d6969494d4d4b",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/piles-wooden-cargo-pallets-stacked-pallet-warehouse-223996293_jpg.rf.d892047f3921340db5b6c24b2115d8ad.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/piles-wooden-cargo-pallets-stacked-pallet-warehouse-223996293_jpg.rf.70c0092bbf67deb33f196ca45a4ef499.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6d37be8cbcb7a4a6",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083546_jpg.rf.2be438f7fea8333bb05f617e664f7592.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083546_jpg.rf.6f192e68315cb417a5884ddbd4aa5899.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "46468bc8c9c84949",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104149_jpg.rf.7de17426c24d870576bc102e0840723a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104149_jpg.rf.ad7d093bd85334cb6b0a78b20303a001.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2d7773772e8c97b4",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0522_jpg.rf.cf9e171620309654f1643303f68d1b56.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140001_jpg.rf.4518adee06e6deb6b4f12c63acc5bbf8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140001_jpg.rf.4bfebc5a2921decf6dca7f8224e15712.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "435b666aebe3164a",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_085107_jpg.rf.9e6bbdca443872fab6bdc448325f6dee.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085107_jpg.rf.5ade37be4b2218d2d85198e79f6ebf92.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085107_jpg.rf.a9cad5a66e447b4c0ed51f30abc8cd04.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a1a5a5ada4b4a4a4",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/stack-wooden-pallets-industrial-warehousing-195336497_jpg.rf.a4fd13aba9bee0ec5f8501e79d949a53.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/stack-wooden-pallets-industrial-warehousing-195336497_jpg.rf.d9f7c786744253a66946fe073517d9ef.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9c93cd53b5bb8494",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_095854_jpg.rf.906d43e251150a9e211533eeee7503fb.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_095854_jpg.rf.0bf1eefa8ab4bf92a99fc3707440cd79.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0444_jpg.rf.59a406ad0a7bee39a05dac75b72f23b4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8948b6b0b170a42a",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083912_jpg.rf.befd332d637b8a3e5bf925fc6c7783e5.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083912_jpg.rf.cc35abbb61ea633a793fc014b2743f73.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083912_jpg.rf.1217cff894beff98d291db328fdb18f5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "65e5ede5a36ccd93",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083652_jpg.rf.7a68dd4804db031c76c2a25a129465fe.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083652_jpg.rf.e3913fdcf471760424740498ce4825f6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083652_jpg.rf.d01d04c895fbc8409c4c3e79009ceaaa.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b991aa96d65c115e",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084147_jpg.rf.980f7df0c01c10bdb2d1a28bf525bf71.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084147_jpg.rf.feef92a49b4f5064cfbe0570c309b05f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7761e4c5b2e5a1cc",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083648_jpg.rf.19d147f4f6aaa992f9a7dc1a42fbc6f1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083648_jpg.rf.701f80c969fb6470d88425e8f3d59625.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083648_jpg.rf.c8fbfc52dae8aaf0a5d61f08c9f684d4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "caca8ace68a82986",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104611_jpg.rf.ab641b60fa59d2ba9b5095d1e1d84c68.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104611_jpg.rf.eee0117988f74ef1f8ae49ed680350ce.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8bad246f119aed65",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0480_jpg.rf.54c7d05e9b98ab402eee5402741981d6.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135435_jpg.rf.c1db0171235ccb35ab00d81ae5bc079b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7833b2d5949467d3",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/stack-industrial-plastic-pallets-215737481_jpg.rf.b9243c60f6d03ae8425c23b2150908c6.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/stack-industrial-plastic-pallets-215737481_jpg.rf.294c6d077a5c4a9844d9115d897a090d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "666692a665b31393",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083512_jpg.rf.984c2437689f27cef21d379225ae346a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083512_jpg.rf.d9fbe714eced92c84dad40c70ce95119.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083512_jpg.rf.c4fe97ba69d0d79e95affa132722b751.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "365c0d73364e988b",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083620_jpg.rf.85675a72c1059ef3cd723482dd1bcaab.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083620_jpg.rf.6930fd9a7cba161f229cbb2a530c1823.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083620_jpg.rf.cf21bd76f911980061b80279fda0fac3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5661793712b68367",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0530_jpg.rf.d57fba30b574e163a67b3b091f88dd99.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140301_jpg.rf.abd93bd23bfc76a1e92b4a6aba3a35b1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "3774edcc6a8dd991",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083931_jpg.rf.308bd177cca3b6f8519c1493c387e418.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083931_jpg.rf.0f20690cc17eb8cb7c871470ceec9c11.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083931_jpg.rf.333eff24e0e771a1fd7e3b34fd205897.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "fcdada9e9b9bd8bc",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/B0EHAW_jpg.rf.f8190a036c821651b02b8c5dc6928965.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/B0EHAW_jpg.rf.9c34c47973ff793bbe5af4ac3c717b42.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "06370f4dc432360d",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083713_jpg.rf.ffb9d76069b2220758aefc70523e5071.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083713_jpg.rf.f92513e3e504a5819ad0f7d510ea7f06.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083713_jpg.rf.52166addba67eb53aefeeece3fbdfc23.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2c66225763381312",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250806_104515_jpg.rf.c2a909e2feaae7bdc23150494ce1b516.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104515_jpg.rf.12600819b17ba7193a75d703141a747b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104515_jpg.rf.aa200ab32063c7d2572ab00fde6fc215.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "ada91979692d2e38",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_083813_jpg.rf.c211edb7909ffd872859de8728afab37.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083813_jpg.rf.f965d445f178fd13afc68e5d9969b1d2.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083813_jpg.rf.ec25264cc06165f6f0d94cdad2af71e8.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "614491b5e5e57291",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_140118_jpg.rf.ef79c1d87ae1c4704059acbef7f32ccc.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0526_jpg.rf.3529517a8b84f0104ef7ead156a6908e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1e2e16949cd67862",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250804_140843_jpg.rf.ba2f4d9038848c415bc0b5b6b98a7e13.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0434_jpg.rf.4ac261fe3f3e946753a01878299984fd.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "93a616aa3392cfc2",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250729_084327_jpg.rf.921e5d91cf6f0e686aa69e464d27d7c1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084327_jpg.rf.9fc5cada74d26a0d76cfe11f58576e4e.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "682831366b7a8bab",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/0542_jpg.rf.62b96b8f576852124052f0adc41746e1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140340_jpg.rf.f47dc96f47352d193b8c8a346b537239.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140340_jpg.rf.1b9e47f1e5dc6ae2a602b6179fbb776a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d656b4b3cb0e8264",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/IMG_20250813_135918_jpg.rf.99d26f981c1389c5310cf491efdd81df.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0512_jpg.rf.b2a8d3308dbad45d584bb10048bc197b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135918_jpg.rf.8c8f5035baa56916c6385749037e7090.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e88c113ce8319797",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135843_jpg.rf.1d134f07cb26fd368c9ef92c5f2822e8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0508_jpg.rf.f6babc877d6ec0104af515b48fd01ae3.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135843_jpg.rf.f680dc2d56d4f8beb4785abe8f2ba9ea.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "608a55448ee4a595",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0482_jpg.rf.3bea9532d48f67089587572844f1367b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135442_jpg.rf.d9c5923432c24a8b41b68712586c026f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b7667f4b696d5967",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084127_jpg.rf.23b20d210f2a9dfaa559817abf72946a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084127_jpg.rf.2bd042f0ad36c753bd54cf6ac54b5e1b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b9f55d173e465a37",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083612_jpg.rf.f0abefbb1976dfb66a210acc0e5c5ecf.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083612_jpg.rf.e58cf35f5996f4f3984377fb5cc544a0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5d3199b6a2a3b365",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084533_jpg.rf.059d7db9d14f04e65cccf2595d6a2640.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084533_jpg.rf.e2818e3118510d7263ac849a7fe4fa64.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b322561d31373653",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0494_jpg.rf.5ec3a2cdbed052ecb9caa743216814d0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135652_jpg.rf.5fb1cd63b238d6dcd31290ef4442d6da.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135652_jpg.rf.02dfe779d5c476404a35dc9a99d7e287.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e0632aaad5f4f1a4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084508_jpg.rf.d46842523dc040e0fefd0e5cd34d45a4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084508_jpg.rf.4c15d93bd8a6b954e92c727d9b042dc8.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084508_jpg.rf.17ed6cec8e6a8f288eebbd6bab09cbe5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4ea431312b2b5a65",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135455_jpg.rf.5d983fa5d9aefa5ba2a30d46a3985e8f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135455_jpg.rf.9fc4b33a0964f4672fd341f52b18fb20.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0484_jpg.rf.d7a557bea0bdd37a81b747d267be7118.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "30725355bfa9699d",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083840_jpg.rf.94ec4c86ac90157b448c2f0376d73ee0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083840_jpg.rf.f789c4a5c6cb7dffce9145134118fb56.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083840_jpg.rf.c67f6ed5bbdffe5e185909f8833d02ec.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e489665f1613b696",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084004_jpg.rf.fa3e3914f92bd9f7091d53a5bb67dde8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084004_jpg.rf.bce1dd405417915213a23ed1e9523ccb.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084004_jpg.rf.6cad5488713fdbe1f73026d35fce0fee.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b1f5135328496733",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0476_jpg.rf.aaf4dc2aa1f5eff6574f3ab00356c8a8.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135406_jpg.rf.05d64545fd6d21d125db0262617ea4ac.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135406_jpg.rf.9e63aac18d2ab226ce18a17d7f5fdbe4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2dcbcca6acd4e476",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085059_jpg.rf.689566ad4f9710d10a4ce79ddd24f7ba.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085059_jpg.rf.bfaeb3d10841bd31779164f153e90a9f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085059_jpg.rf.179c542eda4ac3df7a503490fb3d6bf5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "f77356c30a149ecc",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135951_jpg.rf.00ed0205c11db17bb39daf07f82b7ded.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135951_jpg.rf.233ef48d1f77b12120a4828ca223633c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0520_jpg.rf.dddb8580c29c5f0934fc28dabaeba5c0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "622b2a27a517bc2c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135939_jpg.rf.cbbc7b6a458ecf87dc2652d9f587f3ee.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135939_jpg.rf.6e30e8756bbdf861656d68d1f1614e62.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0516_jpg.rf.6e9cfb6de31f48e7c8acf83e57c3092f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "aaaaaabab9aaaaa8",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/wood-pallets-4395709_jpg.rf.6788c823a9cece8e44bcfb0d531a3120.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/wood-pallets-4395709_jpg.rf.a254642df4e99e66f29bb1c0957391f5.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/wood-pallets-4395709_jpg.rf.63e41032ee5ba44241b14add52967ae2.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "669db38989190959",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140111_jpg.rf.79dd5b88f8ce403616b3dbaa061e3dc1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140111_jpg.rf.638011009c3b2e1c43b0111003361525.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0524_jpg.rf.fa6a50a7044ef1be3c2532ea1da63138.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "71ea9aaec8cdade9",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084642_jpg.rf.1353a9d0a49348e7d4e8b0719ba5452f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084642_jpg.rf.f80fd96265ab0dee588e33ee547a9746.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "99b5bc4e37abe3b1",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084205_jpg.rf.ae8023bdbc5e5e81074382c3ef8ea86e.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084205_jpg.rf.de6451ca5f8450ca150b25f8cd506916.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084205_jpg.rf.e197a13df0b08ce58a467d6e4879d83c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6c3189ab87b2a3e1",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103857_jpg.rf.751ce6ccb461cd388411e79785b93aab.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103857_jpg.rf.5d3c1129eb749eda91a924799b1f671d.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103857_jpg.rf.ef2743f4fd3d956b2a3e4c0ec231e23d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b3734d282eae4eae",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104145_jpg.rf.eb412d1450ebb4d49ff9d08f52c3d331.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104145_jpg.rf.074296af9f260e4f665643f6f8f86bdb.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9397d6323f297c7e",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084550_jpg.rf.68840b04b099adf13147640f0e9a04e6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084550_jpg.rf.db8aff52e23106b071c5245b25a127df.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "265e9656eecc2889",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104544_jpg.rf.3258342b1cfb65f5b6a1973ab4fb4a73.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104544_jpg.rf.c34cb834e37e47b0aef672e84edaaa42.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104544_jpg.rf.8cac89a515b6f416f6079f5e17f3aaec.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5ca6b1b99a93b6a5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085049_jpg.rf.494cfa2d15904ac5542de2f670aad541.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085049_jpg.rf.e8d3598c8165ac8a72bd0b0cffd1af1e.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085049_jpg.rf.73f8f4c41e90a3c97e07427490160945.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "717050f13111d9d9",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/P94F69_jpg.rf.fef37b5409d4c55abf2f0c40ee092acb.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/P94F69_jpg.rf.598f1c5863c99dff9476b9e91a875746.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2e93968725214b63",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250804_140855_jpg.rf.518e147c1c5831adcc5f5283d08c43a8.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0436_jpg.rf.3b71e9fe6325aa31f56d9378335661a5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8d1514713696cb59",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083828_jpg.rf.eb1e2cdf79137a638c87d1855ad0c1ce.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083828_jpg.rf.a3fb0e862394152d769790669c809ae9.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083828_jpg.rf.ce86abcbbe1902d8ba530194d34d09f4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "7371ccf6f2e67232",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103925_jpg.rf.fc138e48f489ea3c78044d7659c7d6dd.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103925_jpg.rf.aba6b290f7ee93eb403d60d287cf5a70.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "63a11113a96a829e",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083835_jpg.rf.b0ab4d758df871eff7b6fec7324c4b2f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083835_jpg.rf.bf2ed0eb9f7038226ae06c7c22991eda.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083835_jpg.rf.56fb401570d6d1d43e8c572396df0360.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1155555555555155",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/C5D4TR_jpg.rf.b4e3d4620e2045272b79ad94f0c6ffec.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/C5D4TR_jpg.rf.dd5038bb88a8cb89370cb688fd7955c3.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b39aeace8a0e26a6",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104551_jpg.rf.180516081426ed7586814ec4c4d910a6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104551_jpg.rf.25edee0dd3f7149576589b9bf0285960.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "536d5b19139451b4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_085121_jpg.rf.f46c6dfb51a2f642cda446cb2d044623.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_085121_jpg.rf.a59d88b4f749f19c2f99e6797584e1b4.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b58d71730a9bb3b6",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135912_jpg.rf.3a4890fa0c215d771dc28554f8bdbac2.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0510_jpg.rf.2006f467571f62406f6fb64e5f6806b6.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135912_jpg.rf.91818e1175131c84446e1f24ffc2a686.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c4163678e28d8d8c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133047_jpg.rf.458d3616695383d6e5716c5f63c495ff.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133047_jpg.rf.245b47ea6064cc97fc839d0f59d033f5.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_133047_jpg.rf.127551550e519d838e8da5476c133004.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "98b6a64b6989f949",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140427_jpg.rf.39f085b24a5d70fc765d5ca26a8f7439.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140427_jpg.rf.8dd868a3fa93173ba61fe3ea531619d8.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0552_jpg.rf.9eae4c6a934b2981642731c324746236.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "30883371492b9692",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135326_jpg.rf.f776da302c8741a77c94c437e80ced8f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0472_jpg.rf.394b93091e8929729c38c9f735584c00.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135326_jpg.rf.49db00acdc7a7b36a48b57e17623d1df.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4d1f399b96e8abab",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135107_jpg.rf.be6fe3917ade1ccfdc5c730ef297da3d.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0456_jpg.rf.a0b34302c713eb0dfcdb8fd883dd5f95.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0409334365c51e23",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_133052_jpg.rf.8b684996f113214024d7f7c2ab73d9c4.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_133052_jpg.rf.bd3568983c42521c8359410af346ed22.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5786c7b2b6b1ab69",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0532_jpg.rf.79661f85a39ad1c425df17a83db9aeaa.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_140303_jpg.rf.6d7e264293e32920c5a9c6fe713f594a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d5d3d3d19b9b9293",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/cargo-pallets-portrait-format-469981_jpg.rf.dfb4a993076dd291d0f6069cf9074f44.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/cargo-pallets-portrait-format-469981_jpg.rf.490a9c8e4016a9a2fbf4984a4032512f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "cafef4b6ca4760e3",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084230_jpg.rf.b9bb8a26ff31e7077c5ba541c9618aa1.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084230_jpg.rf.58156c341829a380e9600ec204829e3f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084230_jpg.rf.b61f017ae77f119fd9992cb007154a27.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "199c9be6b3b3ef75",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083557_jpg.rf.4c069a01b9ed7dab2785f0151a2c13f7.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083557_jpg.rf.afd59a014463421e246d2d797582776c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083557_jpg.rf.ac148398332594e40528887bd2c1f493.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "186256b54c4a6e66",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083517_jpg.rf.47bf2aa04d9267f6f231a91fd255e1b0.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083517_jpg.rf.aed0b6815fa5810a253643b657cae076.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a394c1754d5a8ab9",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083847_jpg.rf.bf84c3b49d71cb4fe050c348fbd6e19a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083847_jpg.rf.bd28443dcf223c12211d0b316dc56247.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083847_jpg.rf.33ef77bd594804da3daf535dc39cbc61.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "56260b3f6f0666ed",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084246_jpg.rf.c89eb2ea8f948057531f575eb4440688.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084246_jpg.rf.a80988d217e69f14d9b0cc6ea48e0362.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2aa2ea99361c6d58",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083551_jpg.rf.2e15c085b3ebc78f8b386c29f37219db.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083551_jpg.rf.0fe24492686a9c5390c6323a2aa2d8ad.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "55106b2b69f9f978",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_103755_jpg.rf.a34502b21a473939ed4cf588811ed045.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103755_jpg.rf.3a41d19505ce6c918ee11ef67b2f8194.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_103755_jpg.rf.2fd61ba63eafa6c455836bb230a87d4a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a59be59133671063",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0442_jpg.rf.cdc23a16d7d89fc383c0d3008a20cad4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250804_141450_jpg.rf.7104bf7bb1acb7167731090b5602f26f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250804_141450_jpg.rf.226efb786590bd86c9fc8216b4736961.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d41696d692979397",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104105_jpg.rf.b2b3364fee96ee2f16f321178b67c45b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104105_jpg.rf.add17fd141fc6fd60ed55227ff6c181f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104105_jpg.rf.158535c8992f6c93beb743fd066e4e57.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9d4cfd1922eeac96",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104026_jpg.rf.68960638bf86fb90b31123ae7f0a7505.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104026_jpg.rf.42339dfbd0f5f1cc16538ca2024c9028.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "ca6b7375e4329091",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135810_jpg.rf.09cfef3a935bcea2f410557fc43f206a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0504_jpg.rf.6301014625fb8671f9e41c2b2ac58b84.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "55974a4ab5c45353",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084524_jpg.rf.da6c2335a8f08a95255e31d09b152b8a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084524_jpg.rf.7f740ebfa73f33f0610d778eaa71211d.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084524_jpg.rf.c9cb520c94ab815da05a7209b551022f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "565774b589096aea",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084141_jpg.rf.a03b92c43384cf6bbb672712df415276.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084141_jpg.rf.2d2737f75444354139ac0be87401131b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084141_jpg.rf.8f800748a09b8e4f6a7ca3505cbf45bf.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c4518e7b4d393333",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0452_jpg.rf.b7a0934d337acc4dad6825d7896a07bb.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_100118_jpg.rf.0eb55a17da23990427c61c1a08904907.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "342d338d84ac0e4e",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_140310_jpg.rf.8c31c99e73706ba5f97377e592524ca7.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/0534_jpg.rf.a7d54fc9507263169d3a10251206e867.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "aaaaaaabbb04a013",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/CXCF2J_jpg.rf.32a3b01cdff87ef3800cbbfcfbb522aa.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/CXCF2J_jpg.rf.380d094a7a205442011469a678029f45.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "bddd279296c18bb7",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084312_jpg.rf.b0ad5fe9738f048e6acd9cf9c81de2d3.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084312_jpg.rf.a07882bfa136ea94bd4bef5dc1be042e.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084312_jpg.rf.0c670f512262bd7436f34af5267c13da.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d271636341617190",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084542_jpg.rf.f881dccebe81a0ae190b6559e45f9907.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084542_jpg.rf.37eda8e5ef9db7ed1b5ffdddf991edde.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9a4e3369b9955919",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0470_jpg.rf.a2a39ad86989755c0a14ac50125e4a0f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250813_135305_jpg.rf.2d0c311ba0779b27643ea262efdf0376.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250813_135305_jpg.rf.2043297cb2754b24c757e7759ef220f0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "3193d6466a6bf266",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083507_jpg.rf.6c6633634730ac6b14451075315dcb1a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083507_jpg.rf.a10a1e8518031fd390f55b5939b375e4.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083507_jpg.rf.f7fdc90eecc5ecc5d199f9d2eefa2d39.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "a9ee8cae9e9eae34",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083631_jpg.rf.21b97ba198f693ac802570c8fb81de39.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_083631_jpg.rf.aa3ef8eb8fd2e700647d95b4fff07eea.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_083631_jpg.rf.a98f5b8f5fdef3a066d789199dd66d31.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "4d6527b90e9a6072",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084331_jpg.rf.22eeabbfc974818a6e701d5f3ba7055a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084331_jpg.rf.0723c5c4ad2852dda44091d4c2e8c6ed.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1bb113cd74334c71",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084604_jpg.rf.d7964e2fd85de1a9bb464f4d805edd5a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084604_jpg.rf.ec5e5ab7dd6f564da5ebdf14126dfa8f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e9313069696dc9ab",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104050_jpg.rf.bb90ec912884bc3f8212a399c3cc772a.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104050_jpg.rf.cf3854ff01a8cb59dc70796372c585e2.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104050_jpg.rf.a66da9f51fd5c7af0e7f20e4b2d39d3c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "2d8cf36d29b18ded",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250729_084335_jpg.rf.383320690f0cc420dce29fb9db4d2e5b.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250729_084335_jpg.rf.499cda626e7f45130c4996ffc441d03f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d0118fefec0e30b5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/IMG_20250806_104129_jpg.rf.ec33e59fc13ef44ab1a5b70e46c25b80.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/IMG_20250806_104129_jpg.rf.96ab8dd87936a996c6b1009419053da9.jpg"
+              }
+            ]
+          }
+        ]
+      },
+      "gates": {
+        "all_references_resolve": true,
+        "all_boxes_valid": true,
+        "cross_split_exact_duplicates": 0,
+        "cross_split_visual_hash_duplicates": 110
+      }
+    },
+    "plh_c_1_v1": {
+      "audit_schema_version": 1,
+      "root": "plh_c_1_v1",
+      "annotation_files": [
+        {
+          "split": "test",
+          "path": "test/_annotations.coco.json"
+        },
+        {
+          "split": "train",
+          "path": "train/_annotations.coco.json"
+        },
+        {
+          "split": "valid",
+          "path": "valid/_annotations.coco.json"
+        }
+      ],
+      "inferred_task": "instance-segmentation",
+      "categories": [
+        {
+          "id": 0,
+          "name": "warehouse-Pallets-and-palle-U3mp"
+        },
+        {
+          "id": 1,
+          "name": "front"
+        },
+        {
+          "id": 2,
+          "name": "hole"
+        },
+        {
+          "id": 3,
+          "name": "hole_left"
+        },
+        {
+          "id": 4,
+          "name": "hole_right"
+        },
+        {
+          "id": 5,
+          "name": "pallet"
+        },
+        {
+          "id": 6,
+          "name": "pallet_front"
+        },
+        {
+          "id": 7,
+          "name": "pallet_pocket"
+        },
+        {
+          "id": 8,
+          "name": "wood"
+        }
+      ],
+      "images_by_split": {
+        "test": 36,
+        "train": 960,
+        "valid": 56
+      },
+      "annotations_by_split": {
+        "test": 107,
+        "train": 3324,
+        "valid": 222
+      },
+      "instances_by_class": {
+        "front": 156,
+        "hole": 336,
+        "hole_left": 159,
+        "hole_right": 158,
+        "pallet": 167,
+        "pallet_front": 718,
+        "pallet_pocket": 1478,
+        "wood": 481
+      },
+      "annotation_signals": {
+        "bbox": 3653,
+        "polygon": 3653
+      },
+      "duplicates": {
+        "exact_groups": [],
+        "visual_hash_groups": [
+          {
+            "fingerprint": "f0cf1370e0f09fbe",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/train_4_640_aug_10_combined_4_jpg.rf.21281ed80d2794d2d5092ebb5012e0eb.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_4_640_aug_05_flip_jpg.rf.799eeec896f0fee86a472b6f5b93d0a8.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "fcfcbe1d4c4ccece",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/b2c37643-IMG_20220927_110912_jpg.rf.c6fe3b09aabc40f84d146ade91a43d62.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/b2c37643-IMG_20220927_110912_jpg.rf.eb484b55d695f56a42a5a745616ec7a5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "27cf6f2949050503",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/d3a62eb4-test_image_72_flipped_jpg.rf.adb77e8d92491dd31a8a0dcc387ad10b.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/d3a62eb4-test_image_72_flipped_jpg.rf.c569f6575cbf36c8f84c0460ea46ae7c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "307070180e237314",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/d5fa3034-IMG_20220927_111533_flipped_jpg.rf.95c4ba4ea2a05ffeb3f2d3313faaba23.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/d5fa3034-IMG_20220927_111533_flipped_jpg.rf.cd9d499ba2c26a1b4e5ec2477dfc3b0d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "dfcfc76764c545c5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0b108350-test_image_25_flipped_jpg.rf.99c22128bc6c075a09b77fba7e331483.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/0b108350-test_image_25_flipped_jpg.rf.cad01d11aad43ea5ba8d4411f95b1715.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0e1b39dccc6e4cad",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_1_640_aug_02_brightness_jpg.rf.99fabacf1919a6068bcb5d65c1e8630e.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_1_640_aug_04_blur_jpg.rf.70983dacf05d927420087645d0601112.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_1_640_aug_04_blur_jpg.rf.d04258023da83be17a11b310300424c0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_1_640_original_jpg.rf.beffcb8f625be9fd36956cd8d68dcb67.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0128038888802442",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/1728981480974_jpg.rf.18e23d5ca6afc495b375dacf5364b31f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/1728981480974_jpg.rf.8216fbe03c69f8e5e0ffab1c946c3353.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6173f3ebf6f656f3",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/e93b3cc7-IMG_20220927_111523_flipped_jpg.rf.4a0eadba6acd28bb242efdf13dae1dac.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/e93b3cc7-IMG_20220927_111523_flipped_jpg.rf.282091bc393119f5c138dc918d075b9f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "3390c8018c2e6e6b",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/1729063781343_jpg.rf.8092257d0515078243d75b086024811e.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/1729063781343_jpg.rf.b325dc1fec1cbe0d46c88ba219a4b25c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e0e0f0dcf0e03233",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/e18a2028-IMG_20220927_111724_jpg.rf.265e69d6dbf3ebf7015e8c22ae58affb.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/e18a2028-IMG_20220927_111724_jpg.rf.a61c048aba4c815d8efedccda79cd969.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "d8f0f0f18d1f3e3f",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/00354e83-IMG_20220927_110729_flipped_jpg.rf.1400e0026af8b1d0339e9f31f47c9eda.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/00354e83-IMG_20220927_110729_flipped_jpg.rf.7ac9717ca0924aa3af91917fc918ae00.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/00354e83-IMG_20220927_110729_flipped_jpg.rf.ea9d78f341091fe7eeef9ee8338513aa.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "c3c6c48089163031",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/6d7262b2-IMG_20220927_164811_jpg.rf.c46ba1b34ff81fed8d9c3f33b4c188fa.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/6d7262b2-IMG_20220927_164811_jpg.rf.be19d0ea63342299b902c19821b5e9f0.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "222020242e2e3333",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/3b6d7dc9-test_image_2_jpg.rf.5ff7ef9aff409deb0f7483c1a4276237.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/131d6822-test_image_4_jpg.rf.256c79330b8fb76ff37c2c0faf1ff920.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "33031319317373f3",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/0936475f-test_image_86_jpg.rf.a350bf813dc0a44299ab36bdda5fa3c4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/64f148d9-test_image_85_jpg.rf.889b58ba3866ac7f06a1606a590edc14.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/80da85a1-test_image_87_jpg.rf.53283a3be3bb80265c9dfef77ef0e8e6.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "6efef6f6f6735b76",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/1729063780787_jpg.rf.cc3cd2def3f7b72c42b5a0d9be2a4ea9.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/1729063780787_jpg.rf.d6bace9c0b1b15bb0d5c4a0cf44efdba.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0c1fb9dc6c4c8cac",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_1_640_aug_07_combined_1_jpg.rf.2f48dc5482d2d28865a2ec670c801375.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_1_640_aug_01_rotation_jpg.rf.ecf6839239cbe4608f9e47a05ce6ab5b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "3e3eb67676767473",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/1729063780923_jpg.rf.ae4a123388d3d462ea1f346b8e9a87d0.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/1729063780923_jpg.rf.4c46300b7c0f8230542221677508c13a.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8f2763c0cc89cd4a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_1_640_aug_10_combined_4_jpg.rf.764b3f3d89c2dd807a3ac83ce8a21880.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_1_640_aug_05_flip_jpg.rf.55e236766a0d244b2f822cd8210b4edf.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "86c3e1e4d896a6a5",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/1728981481012_jpg.rf.f11c9e7aba0547fe037f83b8cce052c1.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/1728981481012_jpg.rf.2786bb99802aba74dd50a580847a5961.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "60c0e2c4d8d0d9d9",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/6ddb67d2-IMG_20220927_111722_flipped_jpg.rf.df15d950404c1a0a580b6789fb0ea71f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/6ddb67d2-IMG_20220927_111722_flipped_jpg.rf.ac081c862f1f4a7ee3f60fd9d31b0a96.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5a3e9e5b46e6e6e4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_5_640_original_jpg.rf.a1851105cb758b4b9e444e291421797a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_5_0_640_jpg.rf.6eb31a0f5eca5e29393fe031b6757d0f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_5_640_aug_04_blur_jpg.rf.19cb6774f8dcfffeb06cd8474fe07a42.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "220280e6f2707aee",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/4884ca2a-IMG_20220927_111648_jpg.rf.52fa71714f58cb27ae4da47de5581905.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/4884ca2a-IMG_20220927_111648_jpg.rf.860416a95d857b3076d58bf6591bd83f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "02b0f0648636f0f8",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/32bb2d0a-IMG_20220927_164818_jpg.rf.2e171cfd57dcb287b791e28927cb19d7.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/32bb2d0a-IMG_20220927_164818_jpg.rf.a35bb52c5e072d88bf9ea30509a08e90.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "13031319317373f3",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/70b6497f-test_image_84_jpg.rf.9e2a36629dd36aa9df38e7526f4fb8a3.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/c67cdbbc-test_image_83_jpg.rf.3a1ef3ac5080df7bbaacdbad2d80e47c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/5484642e-test_image_82_jpg.rf.265a90b8941a9e94e0a62ddeda325b8d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "22202024262e3333",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/c909cbff-test_image_5_jpg.rf.588b5639de438b2b63289988739d6adc.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/131d6822-test_image_4_jpg.rf.be627cae5d0b5789301c5052a57685ba.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "02020064727278ea",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/5a98091c-IMG_20220927_111727_jpg.rf.49e8ab407c71f4eb5723919d23d76495.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/5a98091c-IMG_20220927_111727_jpg.rf.989e21a2a9fa977e604200ca7795b29c.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "f0d8d8f8c4d01d55",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/b17c72ac-IMG_20220927_111512_flipped_jpg.rf.b3f1152c988b5e9ad377a583bd2349c7.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/b17c72ac-IMG_20220927_111512_flipped_jpg.rf.ed47dceabb4a92547ec78536ffef1d5f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/b17c72ac-IMG_20220927_111512_flipped_jpg.rf.11037aba3b7c91bbfdb2d8cf1e034316.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "1d865118d1f9088c",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_3_0_640_jpg.rf.7cb3d40799344aa8c2f7978e51c16d40.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_3_640_aug_04_blur_jpg.rf.fa0bf6a1ef0682f758fa1e85366270bf.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_3_640_original_jpg.rf.8af5305521e06189d3d200fa908965e1.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "f0f0f0f0c9d7329a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/98d9b959-IMG_20220927_111503_flipped_jpg.rf.e7aed9d76e756819520df7ee1aec1c00.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/98d9b959-IMG_20220927_111503_flipped_jpg.rf.f720ecbb6365a3b64bdf1a6c9fddb790.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "9bfbfbdb8b8b3333",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/2ece555a-test_image_2_flipped_jpg.rf.04f24cc69a576dbbc03f1fa67872ce08.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/a9e30378-test_image_3_flipped_jpg.rf.37429325e88c38702bfbfe08524dff1b.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "210000008d4de169",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/ff6d290d-IMG_20220927_110859_flipped_jpg.rf.bf1cb96bea3e16f7fd8893539a3bc824.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/ff6d290d-IMG_20220927_110859_flipped_jpg.rf.9367f5e4b254cef8bc11064d8c28ee3f.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "f00c37f1f8f00482",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_4_0_640_jpg.rf.b889b1a793a69fd3e387257ba64907dd.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_4_640_aug_02_brightness_jpg.rf.a5a0b76dd3b721d79cb1a548caec59ff.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_4_640_aug_04_blur_jpg.rf.870f01849f298f5ec66e81775b0284a9.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_4_640_aug_01_rotation_jpg.rf.57b04e30ebe047e845150ed45cec86dd.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_4_640_original_jpg.rf.9fc884988d9ebe80da71f0ed9a054b28.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_4_640_aug_07_combined_1_jpg.rf.cdf0b7d0b1420ff398836f81f4b4f8c5.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "bbfbfbdb9b8b3333",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/aa04fceb-test_image_5_flipped_jpg.rf.ccf49499af64b1a4d0748bc1b9b6b3d4.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/79a7a451-test_image_4_flipped_jpg.rf.58374172287816d03b0f15606c97f699.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "333f376773313130",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/a94fbcb5-test_image_87_flipped_jpg.rf.fdba21ca19655a306d52ce4a2eae3b2f.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/7d5c783f-test_image_86_flipped_jpg.rf.1ff916baecf2cbc59025a6c58b7c1a88.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "0e1b39fccc6e4cad",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_1_640_original_jpg.rf.9117f4d1e2437cae70fe38d0f02bee09.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_1_0_640_jpg.rf.82a112a2417b4ec75e08abdbc0274f22.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "e4f0f0704e078303",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/7d64658d-IMG_20220927_110729_jpg.rf.4942b005032cf13bae3b013abdea48dc.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/7d64658d-IMG_20220927_110729_jpg.rf.a199d04925599f4319e0da44b7a14562.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/7d64658d-IMG_20220927_110729_jpg.rf.add56d1a152d43965068a75658cb7301.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "b03771f8b87e6c61",
+            "files": [
+              {
+                "split": "valid",
+                "path": "valid/train_2_640_original_jpg.rf.9b923fac5ceb1529d0259004aa9c7eff.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_2_0_640_jpg.rf.786ab472946002c0ebad42b5d338649e.jpg"
+              }
+            ]
+          }
+        ],
+        "cross_split_exact_groups": [],
+        "cross_split_visual_hash_groups": [
+          {
+            "fingerprint": "f0cf1370e0f09fbe",
+            "files": [
+              {
+                "split": "test",
+                "path": "test/train_4_640_aug_10_combined_4_jpg.rf.21281ed80d2794d2d5092ebb5012e0eb.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_4_640_aug_05_flip_jpg.rf.799eeec896f0fee86a472b6f5b93d0a8.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "8f2763c0cc89cd4a",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_1_640_aug_10_combined_4_jpg.rf.764b3f3d89c2dd807a3ac83ce8a21880.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_1_640_aug_05_flip_jpg.rf.55e236766a0d244b2f822cd8210b4edf.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "5a3e9e5b46e6e6e4",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_5_640_original_jpg.rf.a1851105cb758b4b9e444e291421797a.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_5_0_640_jpg.rf.6eb31a0f5eca5e29393fe031b6757d0f.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_5_640_aug_04_blur_jpg.rf.19cb6774f8dcfffeb06cd8474fe07a42.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "13031319317373f3",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/70b6497f-test_image_84_jpg.rf.9e2a36629dd36aa9df38e7526f4fb8a3.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/c67cdbbc-test_image_83_jpg.rf.3a1ef3ac5080df7bbaacdbad2d80e47c.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/5484642e-test_image_82_jpg.rf.265a90b8941a9e94e0a62ddeda325b8d.jpg"
+              }
+            ]
+          },
+          {
+            "fingerprint": "f00c37f1f8f00482",
+            "files": [
+              {
+                "split": "train",
+                "path": "train/train_4_0_640_jpg.rf.b889b1a793a69fd3e387257ba64907dd.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_4_640_aug_02_brightness_jpg.rf.a5a0b76dd3b721d79cb1a548caec59ff.jpg"
+              },
+              {
+                "split": "train",
+                "path": "train/train_4_640_aug_04_blur_jpg.rf.870f01849f298f5ec66e81775b0284a9.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_4_640_aug_01_rotation_jpg.rf.57b04e30ebe047e845150ed45cec86dd.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_4_640_original_jpg.rf.9fc884988d9ebe80da71f0ed9a054b28.jpg"
+              },
+              {
+                "split": "valid",
+                "path": "valid/train_4_640_aug_07_combined_1_jpg.rf.cdf0b7d0b1420ff398836f81f4b4f8c5.jpg"
+              }
+            ]
+          }
+        ]
+      },
+      "gates": {
+        "all_references_resolve": true,
+        "all_boxes_valid": true,
+        "cross_split_exact_duplicates": 0,
+        "cross_split_visual_hash_duplicates": 5
+      }
+    }
+  },
+  "gates": {
+    "expected_tasks_match": true,
+    "task_mismatches": {}
+  }
+}

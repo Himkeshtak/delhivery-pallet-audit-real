@@ -10,6 +10,7 @@ def test_load_pinned_sources() -> None:
     assert config.canonical_format == "coco"
     assert {source.id for source in config.sources} == {"pallet_detect_v1", "plh_c_1_v1"}
     assert all(source.version == 1 for source in config.sources)
+    assert all(source.local_archive for source in config.sources)
 
 
 def test_rejects_duplicate_source_ids(tmp_path: Path) -> None:
@@ -32,4 +33,3 @@ sources:
     )
     with pytest.raises(SourceConfigError, match="Duplicate source id"):
         load_sources(config_path)
-

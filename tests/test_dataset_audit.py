@@ -42,6 +42,7 @@ def test_audit_detects_cross_split_exact_duplicates(tmp_path: Path) -> None:
     assert report["images_by_split"] == {"test": 1, "train": 1}
     assert report["instances_by_class"] == {"pallet": 2}
     assert report["gates"]["cross_split_exact_duplicates"] == 1
+    assert report["gates"]["cross_split_visual_hash_duplicates"] == 1
 
 
 def test_audit_recognizes_polygon_signal(tmp_path: Path) -> None:
@@ -55,4 +56,3 @@ def test_audit_recognizes_polygon_signal(tmp_path: Path) -> None:
 
     assert report["inferred_task"] == "instance-segmentation"
     assert report["annotation_signals"]["polygon"] == 1
-
