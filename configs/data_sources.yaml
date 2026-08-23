@@ -1,0 +1,18 @@
+schema_version: 1
+canonical_format: coco
+sources:
+  - id: pallet_detect_v1
+    workspace: rj-xvfw4
+    project: pallet-ff5lh-fp7tw
+    version: 1
+    url: https://universe.roboflow.com/rj-xvfw4/pallet-ff5lh-fp7tw/dataset/1
+    expected_task: object-detection
+    allowed_licenses: [CC-BY-4.0, Public-Domain]
+  - id: plh_c_1_v1
+    workspace: rj-xvfw4
+    project: plh-c-1-veibf
+    version: 1
+    url: https://universe.roboflow.com/rj-xvfw4/plh-c-1-veibf/dataset/1
+    expected_task: instance-segmentation
+    allowed_licenses: [CC-BY-4.0, Public-Domain]
+

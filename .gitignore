@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Real datasets are downloaded reproducibly and are not redistributed.
+data/raw/**
+data/interim/**
+data/processed/**
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Generated runs and model binaries are tracked by manifests/releases, not Git.
+runs/**
+weights/**
+artifacts/**
+!runs/.gitkeep
+!weights/.gitkeep
+!artifacts/.gitkeep
+
+.env
+.env.*
+!.env.example
+*.onnx
+*.engine
+*.pt
+*.pth
+
