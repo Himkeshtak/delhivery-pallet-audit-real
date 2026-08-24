@@ -22,6 +22,10 @@ def test_committed_model_weights_match_model_cards() -> None:
             5_961_764,
             "79aaaa6c147ef5662f624e5db607f25fce0dea209b573f75c8c67554dccdcd0c",
         ),
+        "carton-seg-scd-v1.pt": (
+            5_951_652,
+            "5bffd9bdcd58f588bc6ba5e4165a916f4a366089043cb8c546c14ac3c2dd9fa7",
+        ),
     }
     for name, (expected_bytes, expected_hash) in expected.items():
         path = Path("weights/releases") / name

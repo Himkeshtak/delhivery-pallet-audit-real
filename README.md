@@ -1,10 +1,11 @@
 # Delhivery Pallet Audit - real-data implementation
 
-> Status: both user-supplied real Roboflow exports are imported and audited.
-> Their original splits contain cross-split perceptual duplicates. The grouped
-> real-data detector and structural-part segmenter are trained, independently
-> evaluated, benchmarked, and committed with hashed weights. No result below
-> comes from synthetic data or borrowed hardware.
+> Status: both user-supplied real Roboflow exports and the official real-image
+> OSCD carton-mask dataset are imported and audited. Leakage-controlled
+> pallet detection, structural-part segmentation, and individual-carton
+> segmentation models are trained, independently evaluated, benchmarked, and
+> committed with hashed weights. No result below comes from synthetic data or
+> borrowed hardware.
 
 This project implements one explainable pallet assessment per tracked pallet:
 metric floor pose with uncertainty, directed face/orientation, eight SOP checks
@@ -22,7 +23,8 @@ untraceable end-to-end verdict.
 ### 1. Dataset and detection (30%)
 
 The two assignment-listed Roboflow Universe version URLs are pinned in
-`configs/data_sources.yaml`. The canonical download format is COCO JSON because
+`configs/data_sources.yaml`; the official OSCD source is pinned in
+`configs/external_sources.yaml`. The canonical download format is COCO JSON because
 it preserves category metadata, boxes, and polygons without coupling the source
 archive to a trainer. `DATASET.md` records the measured counts, sourcing cost,
 label rules, biases, licenses, hashes, and the supplier-split leakage finding.
@@ -38,6 +40,12 @@ The observed test mAP50-95 is 0.556. The estimated ceiling for this exact source
 taxonomy is roughly 0.65-0.75 with corrected negative labels, 640 px training,
 an unfrozen backbone, and more capture days. That is an engineering estimate,
 not a measured result, and says nothing about metric pose or a new warehouse.
+
+For individual cartons, the final deployable baseline is YOLO11n-seg fine-tuned
+on 6,396 real OSCD training images. Its immutable 1,000-image author test set is
+kept outside model selection. These masks support visible box separation and
+orientation evidence; because OSCD often crops out the pallet, they do not by
+themselves prove load balance, overhang, wrap, or damage compliance.
 
 ### 2. Pose estimation (35%)
 
@@ -63,6 +71,10 @@ was actually measured on an Intel Core Ultra 5 125U CPU at 320 px: 36.23 ms
 median and 38.60 ms p95 end-to-end per image, or 27.50 FPS over 262 images.
 This is one component, not a Jetson or full-pipeline benchmark. Any TensorRT
 claim remains pending an actual export and target-device measurement.
+The carton segmenter was separately measured over all 1,000 OSCD test images:
+78.25 ms median and 116.90 ms p95 end-to-end, or 12.35 FPS from total wall
+time on the same CPU. This is also a component benchmark, not an arithmetic
+claim about full-pipeline speed.
 ByteTrack and temporal confidence fusion reduce flicker while fail-safe gates
 handle blur, occlusion, bad calibration, out-of-range pose, and stale tracks.
 
@@ -75,7 +87,7 @@ flowchart LR
     C --> D["YOLO pose: 8-12 structural keypoints"]
     D --> E["Topology + geometry refinement"]
     E --> F["Floor homography: metric pose + covariance"]
-    C --> G["YOLO instance segmentation"]
+    C --> G["YOLO structural + individual-carton segmentation"]
     G -. "accuracy comparison" .-> H["Mask2Former"]
     G --> I["Visible pallet / load regions"]
     I --> J["EfficientAD visible-damage score"]
@@ -116,6 +128,7 @@ python tools/import_local_archives.py
 python tools/audit_dataset.py
 python tools/prepare_yolo.py --source data/raw/pallet_detect_v1 --output data/processed/detect --task detect --report reports/detection_preparation.json
 python tools/prepare_yolo.py --source data/raw/plh_c_1_v1 --output data/processed/segment --task segment --report reports/segmentation_preparation.json
+python tools/prepare_scd_oscd.py --source data/raw/scd_oscd_official --output data/processed/carton_scd --report reports/carton_scd_preparation.json --archive data/raw/downloads/scd_oscd_official.zip --expected-archive-sha256 da1b8063a73a7879670724daabab3005136744284bdc159624ae191b579d5980
 python tools/validate_yolo_dataset.py --input data/processed/detect --task detect --report reports/detection_validation.json
 python tools/validate_yolo_dataset.py --input data/processed/segment --task segment --report reports/segmentation_validation.json
 ```
@@ -134,7 +147,11 @@ python tools/generate_manual_review_example.py
 # Measured segmenter run:
 python tools/train_yolo.py --task segment --data data/processed/segment/data.yaml --epochs 20 --image-size 320 --batch 16 --device cpu --workers 0 --cache false --freeze 10 --patience 7 --run-name segment-real-v1
 python tools/evaluate_yolo.py --task segment --model runs/yolo/segment-real-v1/weights/best.pt --data data/processed/segment/data.yaml --split test --image-size 320 --output reports/segmentation_test_evaluation.json
-python tools/train_yolo.py --task pose --data data/processed/pose/data.yaml --run-name pose-real-v1
+
+# Measured real-carton segmenter run:
+python tools/train_yolo.py --task segment --data data/processed/carton_scd/data.yaml --model yolo11n-seg.pt --epochs 10 --image-size 320 --batch 16 --device cpu --workers 0 --cache false --freeze 10 --patience 4 --run-name carton-seg-scd-v1
+python tools/evaluate_yolo.py --task segment --model weights/releases/carton-seg-scd-v1.pt --data data/processed/carton_scd/data.yaml --split test --image-size 320 --batch 16 --device cpu --output reports/carton_segmentation_test_evaluation.json
+python tools/benchmark_yolo.py --model weights/releases/carton-seg-scd-v1.pt --images data/processed/carton_scd/images/test --device cpu --image-size 320 --warmup 10 --repeat 1 --output reports/runtime_carton_segmentation_cpu.json
 
 # Nominal visible crops versus separately labelled damaged holdout:
 python tools/train_anomaly.py --model efficientad --data data/processed/anomaly
@@ -208,6 +225,31 @@ composition with the detector is about 95.5 ms mean, or 10.5 FPS; that is not a
 measured end-to-end pipeline and misses the 15 FPS target. Deployment therefore
 runs detection intermittently, tracks between detections, and schedules masks
 only for stable pallet tracks.
+
+### Individual-carton segmentation
+
+The official OSCD archive contributes 8,401 real images. After excluding 133
+author-training images that visually duplicate the immutable author test set,
+the grouped split is 6,396 train / 872 validation / 1,000 test images. The
+effective instance counts are 128,158 / 18,218 / 20,186; five duplicate
+segment envelopes were explicitly audited and removed by the loader. The
+committed checkpoint is
+[`weights/releases/carton-seg-scd-v1.pt`](weights/releases/carton-seg-scd-v1.pt)
+(5,951,652 bytes; SHA-256
+`5bffd9bdcd58f588bc6ba5e4165a916f4a366089043cb8c546c14ac3c2dd9fa7`).
+It trained for 10 epochs/141.0 minutes on the declared CPU.
+
+| Split | Box P/R | Box mAP50 / mAP75 / mAP50-95 | Mask P/R | Mask mAP50 / mAP75 / mAP50-95 |
+|---|---:|---:|---:|---:|
+| Validation, 872 images / 18,218 masks | 0.912 / 0.815 | 0.904 / not exported / 0.722 | 0.913 / 0.810 | 0.895 / not exported / 0.646 |
+| Immutable test, 1,000 images / 20,186 masks | 0.899 / 0.823 | 0.898 / 0.793 / 0.719 | 0.900 / 0.816 | 0.889 / 0.745 / 0.650 |
+
+Mask AP across IoU 0.50-0.95 is
+0.889/0.871/0.855/0.829/0.795/0.745/0.660/0.517/0.283/0.055. This
+distribution shows a strong visible-carton baseline at ordinary overlap but a
+sharp strict-boundary ceiling. The full training curve, test distribution,
+duplicate audit, and actual CPU latency are in `reports/` and summarized in
+[`docs/carton_segmentation_model_card.md`](docs/carton_segmentation_model_card.md).
 
 ## Failure analysis - three worst cases
 
