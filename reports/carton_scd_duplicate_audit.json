@@ -1,0 +1,49 @@
+{
+  "audit_schema_version": 1,
+  "dataset": "SCD OSCD prepared carton segmentation dataset",
+  "finding": "Five source annotations share a class and polygon envelope with an earlier annotation in the same image.",
+  "training_impact": {
+    "train_duplicates_removed_by_ultralytics_loader": 4,
+    "effective_train_instances": 128158,
+    "validation_duplicates_removed_by_ultralytics_loader": 0,
+    "effective_validation_instances": 18218
+  },
+  "test_impact": {
+    "duplicates_removed_by_ultralytics_loader": 1,
+    "effective_test_instances": 20186
+  },
+  "affected_records": [
+    {
+      "split": "train",
+      "prepared_stem": "scd_oscd_90370effdbd2ba81ce4f",
+      "source": "images/train2017/net (5701).jpg",
+      "duplicate_label_lines": [3, 11]
+    },
+    {
+      "split": "train",
+      "prepared_stem": "scd_oscd_bbc0e12e44f70d6cb7e3",
+      "source": "images/train2017/net (5729).jpg",
+      "duplicate_label_lines": [19, 28]
+    },
+    {
+      "split": "train",
+      "prepared_stem": "scd_oscd_f5b0b714cfec99c42308",
+      "source": "images/train2017/net (109).jpg",
+      "duplicate_label_lines": [2, 7]
+    },
+    {
+      "split": "train",
+      "prepared_stem": "scd_oscd_fb60d92b4746e6c7dc1b",
+      "source": "images/train2017/net (5359).jpg",
+      "duplicate_label_lines": [9, 11]
+    },
+    {
+      "split": "test",
+      "prepared_stem": "scd_oscd_bd62a19067164e410352",
+      "source": "images/val2017/net (1424).jpg",
+      "duplicate_label_lines": [9, 11]
+    }
+  ],
+  "resolution": "The loader removed these labels during the completed training and evaluation, so reported metrics already use the effective counts above. The importer now quarantines subsequent class/envelope duplicates for deterministic future preparation.",
+  "audit_method": "Compared normalized polygon min/max envelopes within each prepared label file and confirmed effective counts/messages in the Ultralytics cache."
+}

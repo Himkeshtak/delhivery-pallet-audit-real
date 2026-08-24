@@ -98,12 +98,21 @@ The authors' test partition is immutable. Ninety-seven identical 64-bit
 difference-hash groups crossed the author boundary, so 133 matching
 author-training images were excluded. The eligible training set was then split
 by perceptual group into 6,396 train and 872 validation images; all 1,000 author
-test images remain test. The converted mask counts are 128,162/18,218/20,187.
+test images remain test. The initial converted mask counts were
+128,162/18,218/20,187. A post-conversion audit found five same-class polygons
+whose envelopes duplicate an earlier annotation in the same image (four train,
+one test). Ultralytics removed them during training/evaluation, giving effective
+counts of 128,158/18,218/20,186; the importer now quarantines them deterministically.
 Thirteen annotations with invalid out-of-bounds boxes and two degenerate
-polygons were quarantined. The prepared 7,880 groups have zero cross-split
+polygons were also quarantined. The prepared 7,880 groups have zero cross-split
 leakage, and every retained image/label pair, class id, polygon arity, and
 normalized coordinate passes validation. Deterministic human visual-QA samples
 are committed under `reports/dataset_samples/carton_scd`.
+
+The five-record annotation audit and loader-confirmed counts are recorded in
+`reports/carton_scd_duplicate_audit.json`. It was discovered by inspecting the
+test evaluator warning rather than silently discarded; reported model metrics
+therefore correspond to the effective counts above.
 
 OSCD bias is material: examples include tightly cropped warehouse stacks,
 internet images, retail/cigarette multipacks, repeated packaging, and views

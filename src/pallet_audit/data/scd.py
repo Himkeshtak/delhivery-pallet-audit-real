@@ -129,6 +129,19 @@ def _polygon_line(
     return "0 " + " ".join(f"{value:.8f}" for value in coordinates), None
 
 
+def _segment_box_key(line: str) -> tuple[float, float, float, float]:
+    """Return the normalized segment envelope used by Ultralytics to de-duplicate labels."""
+    values = [float(value) for value in line.split()[1:]]
+    xs = values[0::2]
+    ys = values[1::2]
+    return (
+        round(min(xs), 8),
+        round(min(ys), 8),
+        round(max(xs), 8),
+        round(max(ys), 8),
+    )
+
+
 def _link_or_copy(source: Path, destination: Path) -> None:
     try:
         os.link(_filesystem_path(source), _filesystem_path(destination))
@@ -197,12 +210,18 @@ def prepare_oscd_dataset(
         label_directory.mkdir(parents=True, exist_ok=True)
         _link_or_copy(record.image_path, image_directory / output_name)
         lines: list[str] = []
+        seen_segment_boxes: set[tuple[float, float, float, float]] = set()
         for annotation in record.annotations:
             line, rejection = _polygon_line(record, annotation)
             if rejection:
                 rejection_counts[rejection] += 1
             elif line:
-                lines.append(line)
+                box_key = _segment_box_key(line)
+                if box_key in seen_segment_boxes:
+                    rejection_counts["duplicate-segment-box"] += 1
+                else:
+                    seen_segment_boxes.add(box_key)
+                    lines.append(line)
         (label_directory / f"{Path(output_name).stem}.txt").write_text(
             "\n".join(lines) + ("\n" if lines else ""), encoding="utf-8"
         )
@@ -249,6 +268,10 @@ def prepare_oscd_dataset(
             "validation_fraction_of_eligible_author_train": validation_fraction,
             "group_key": "identical 64-bit difference hash",
             "cross-author-test-policy": "exclude matching author-training records",
+            "duplicate-annotation-policy": (
+                "retain the first polygon for each class/envelope pair, matching "
+                "the Ultralytics segmentation loader"
+            ),
         },
         "cross_author_split_visual_hash_groups": len(cross_author_hashes),
         "excluded_author_train_images": len(excluded),

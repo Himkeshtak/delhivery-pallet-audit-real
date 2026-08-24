@@ -17,7 +17,13 @@ def _noise_image(path: Path, seed: int) -> None:
     image.save(path)
 
 
-def _partition(root: Path, stem: str, seeds: list[int], invalid_index: int | None = None) -> None:
+def _partition(
+    root: Path,
+    stem: str,
+    seeds: list[int],
+    invalid_index: int | None = None,
+    duplicate_index: int | None = None,
+) -> None:
     image_directory = root / "images" / f"{stem}2017"
     annotation_directory = root / "annotations"
     image_directory.mkdir(parents=True, exist_ok=True)
@@ -42,6 +48,20 @@ def _partition(root: Path, stem: str, seeds: list[int], invalid_index: int | Non
                 "segmentation": [polygon],
             }
         )
+        if duplicate_index == index:
+            annotations.append(
+                {
+                    "id": 10_000 + index,
+                    "image_id": index,
+                    "category_id": 1,
+                    "bbox": [2, 2, 12, 8],
+                    "area": 94,
+                    "iscrowd": 0,
+                    # A different contour with the same envelope is still
+                    # de-duplicated by the Ultralytics segmentation loader.
+                    "segmentation": [[2, 2, 14, 2, 14, 10, 8, 9, 2, 10]],
+                }
+            )
     payload = {
         "images": images,
         "annotations": annotations,
@@ -56,7 +76,13 @@ def test_oscd_preserves_test_and_excludes_cross_split_visual_duplicate(
     tmp_path: Path,
 ) -> None:
     source = tmp_path / "source"
-    _partition(source, "train", [1, 2, 3, 4, 99], invalid_index=4)
+    _partition(
+        source,
+        "train",
+        [1, 2, 3, 4, 99],
+        invalid_index=4,
+        duplicate_index=3,
+    )
     _partition(source, "val", [99, 100])
 
     output = tmp_path / "prepared"
@@ -66,7 +92,10 @@ def test_oscd_preserves_test_and_excludes_cross_split_visual_duplicate(
     assert report["authors_partition"]["test_images"] == 2
     assert report["cross_author_split_visual_hash_groups"] == 1
     assert report["excluded_author_train_images"] == 1
-    assert report["rejected_annotations"] == {"degenerate-polygon": 1}
+    assert report["rejected_annotations"] == {
+        "degenerate-polygon": 1,
+        "duplicate-segment-box": 1,
+    }
     assert report["images_by_split"]["test"] == 2
     assert sum(report["images_by_split"].values()) == 6
     assert report["groups"]["cross_split"] == 0
