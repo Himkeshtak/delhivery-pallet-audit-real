@@ -1,0 +1,40 @@
+{
+  "audit_schema_version": 1,
+  "as_of_utc": "2026-08-24T01:15:00Z",
+  "repository": "https://github.com/Himkeshtak/delhivery-pallet-audit-real",
+  "repository_visibility_check": "Authenticated git pushes succeed while the unauthenticated GitHub repository API returns HTTP 404, consistent with a private repository.",
+  "complete_with_committed_evidence": [
+    "real dataset provenance, licensing, cost, counts, label policy, bias analysis, hashes and grouped splits",
+    "real pallet detector training, selected weight, held-out detection/localization metrics and three worst cases",
+    "real structural pallet-part segmenter training, selected weight and held-out box/mask metrics",
+    "real individual-carton segmenter training, selected weight, immutable-test box/mask metrics and CPU benchmark",
+    "versioned eight-check assessment schema, conservative evidence policy and manual-review behavior",
+    "tested visible metric-polygon geometry for overhang, centroid, box rotation and reviewed-layer size inversion",
+    "runnable three-checkpoint single-frame adapter with raw predictions, overlay, hashes and schema-valid per-pallet JSON",
+    "actual development-CPU component latency reports and documented Jetson scheduling/export plan",
+    "README tradeoffs, explicit unfinished section and AI-tool/caught-error disclosure"
+  ],
+  "pending_external_physical_evidence": [
+    {
+      "deliverable": "assignment-camera intrinsic/extrinsic calibration and reprojection distribution",
+      "why": "requires photographs of a measured calibration target from the physical pillar camera"
+    },
+    {
+      "deliverable": "metric x/y/directed-yaw accuracy, sensitivity bins and +/-2 cm / +/-3 degree usable envelope",
+      "why": "requires a surveyed pallet holdout and reviewed face/keypoint labels; no public internet dataset has the assignment camera geometry"
+    },
+    {
+      "deliverable": "load height, stretch-wrap, box-damage and pallet-damage model metrics",
+      "why": "requires assignment-domain reviewed labels and independent good/bad holdouts; the acquired sources do not contain these truths"
+    },
+    {
+      "deliverable": "Jetson Orin Nano TensorRT latency, memory and quantization accuracy cost",
+      "why": "requires the named target hardware and export validation on the same held-out data"
+    },
+    {
+      "deliverable": "five-minute screen recording",
+      "why": "must be recorded and submitted by the repository owner; docs/demo_script.md is ready"
+    }
+  ],
+  "safety_conclusion": "Pending physical evidence is surfaced as MANUAL_REVIEW. It is not synthesized, imputed from internet images, or reported as measured."
+}

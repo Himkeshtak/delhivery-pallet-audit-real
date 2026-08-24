@@ -59,10 +59,12 @@ Low observability or out-of-envelope inputs must return `MANUAL_REVIEW`.
 
 ### 3. SOP verification (25%)
 
-All eight checks from the assignment will be represented in the versioned JSON
+All eight checks from the assignment are represented in the versioned JSON
 contract. Each check has evidence, confidence, thresholds, pose/load weighting,
-and a three-way verdict. The implemented subset and any unimplemented checks
-will be stated explicitly; missing evidence never silently becomes a pass.
+and a three-way verdict. Metric polygon analysis is implemented for visible
+overhang, geometric centroid offset, visible box rotation, and reviewed-layer
+size inversion. Without assignment-camera calibration these signals remain
+unavailable at runtime; missing evidence never silently becomes a pass.
 
 ### 4. Deployment (10%)
 
@@ -75,8 +77,10 @@ The carton segmenter was separately measured over all 1,000 OSCD test images:
 78.25 ms median and 116.90 ms p95 end-to-end, or 12.35 FPS from total wall
 time on the same CPU. This is also a component benchmark, not an arithmetic
 claim about full-pipeline speed.
-ByteTrack and temporal confidence fusion reduce flicker while fail-safe gates
-handle blur, occlusion, bad calibration, out-of-range pose, and stale tracks.
+Track-ID keyed temporal confidence fusion is implemented and tested to reduce
+flicker; the actual ByteTrack video adapter and tuning remain pending video
+data. Fail-safe gates cover blur, occlusion, bad calibration, out-of-range pose,
+and stale tracks.
 
 ## Recommended pipeline
 
@@ -152,6 +156,9 @@ python tools/evaluate_yolo.py --task segment --model runs/yolo/segment-real-v1/w
 python tools/train_yolo.py --task segment --data data/processed/carton_scd/data.yaml --model yolo11n-seg.pt --epochs 10 --image-size 320 --batch 16 --device cpu --workers 0 --cache false --freeze 10 --patience 4 --run-name carton-seg-scd-v1
 python tools/evaluate_yolo.py --task segment --model weights/releases/carton-seg-scd-v1.pt --data data/processed/carton_scd/data.yaml --split test --image-size 320 --batch 16 --device cpu --output reports/carton_segmentation_test_evaluation.json
 python tools/benchmark_yolo.py --model weights/releases/carton-seg-scd-v1.pt --images data/processed/carton_scd/images/test --device cpu --image-size 320 --warmup 10 --repeat 1 --output reports/runtime_carton_segmentation_cpu.json
+
+# Run all three real checkpoints and emit per-pallet assessment JSON:
+python tools/infer_frame.py --image path/to/warehouse-frame.jpg --output runs/demo/frame-001 --device cpu --image-size 320
 
 # Nominal visible crops versus separately labelled damaged holdout:
 python tools/train_anomaly.py --model efficientad --data data/processed/anomaly
@@ -250,6 +257,28 @@ distribution shows a strong visible-carton baseline at ordinary overlap but a
 sharp strict-boundary ceiling. The full training curve, test distribution,
 duplicate audit, and actual CPU latency are in `reports/` and summarized in
 [`docs/carton_segmentation_model_card.md`](docs/carton_segmentation_model_card.md).
+
+On a deterministic held-out test example with 20 annotated cartons, the model
+returned 22 masks at confidence 0.25. The qualitative overlay below is a model
+prediction, not ground truth; exact predictions and confidences are retained in
+[`examples/carton_segmentation_demo/frame_summary.json`](examples/carton_segmentation_demo/frame_summary.json).
+
+![Held-out carton mask predictions](examples/carton_segmentation_demo/overlay.jpg)
+
+### Runnable three-model adapter and SOP boundary
+
+[`tools/infer_frame.py`](tools/infer_frame.py) runs all three committed real
+checkpoints, preserves boxes and mask polygons with confidences/model hashes,
+renders an overlay, records measured component latency, and writes one
+schema-valid assessment for each detected pallet. A held-out example detected
+one pallet at confidence 0.87; the structural model produced one instance and
+the carton model produced none, exposing the OSCD-to-warehouse domain gap. All
+eight checks correctly returned `MANUAL_REVIEW` because no assignment-camera
+calibration or metric pose exists. See
+[`examples/real_frame_pallet/frame_summary.json`](examples/real_frame_pallet/frame_summary.json)
+and the [assessment JSON](examples/real_frame_pallet/assessment_001.json).
+
+![Three-model held-out adapter output](examples/real_frame_pallet/overlay.jpg)
 
 ## Failure analysis - three worst cases
 

@@ -16,7 +16,7 @@ class TimedEvidence:
 
 
 class TemporalEvidenceFusion:
-    """Confidence-weighted evidence fusion per ByteTrack identity."""
+    """Confidence-weighted evidence fusion per externally supplied track identity."""
 
     def __init__(self, window_size: int = 15, half_life_s: float = 1.0, minimum_frames: int = 3):
         if window_size < 1 or half_life_s <= 0 or minimum_frames < 1:

@@ -46,6 +46,12 @@ On the untouched 1,000-image test set, box P/R/mAP50/mAP75/mAP50-95 is
 0.889, 0.871, 0.855, 0.829, 0.795, 0.745, 0.660, 0.517, 0.283, and
 0.055. The steep fall at 0.90-0.95 IoU is the material boundary limitation.
 
+A deterministic held-out qualitative example is committed under
+`examples/carton_segmentation_demo`; its overlay shows the predicted masks, and
+its JSON retains the 22 prediction polygons/confidences for an image containing
+20 reviewed test annotations. It is supporting visual evidence, not a substitute
+for the aggregate immutable-test metrics.
+
 The engineering ceiling for this source domain is approximately 0.70-0.78
 mask mAP50-95 with 640 px input, selective backbone unfreezing, longer training,
 and annotation cleanup. This is explicitly an estimate, not a measured result,

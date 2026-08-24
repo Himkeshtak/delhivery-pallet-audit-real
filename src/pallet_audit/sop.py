@@ -122,6 +122,8 @@ def _probability_check(
         return _manual(index, "required probability evidence is missing", evidence)
     if evidence.coverage < policy.minimum_visible_coverage:
         return _manual(index, "visible coverage is below policy", evidence)
+    if evidence.metadata.get("score_not_calibrated"):
+        return _manual(index, "risk score has not been calibrated as a probability", evidence)
     probability = float(evidence.value)
     if not 0.0 <= probability <= 1.0:
         return _manual(index, "probability is outside [0, 1]", evidence)

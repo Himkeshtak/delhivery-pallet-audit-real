@@ -5,6 +5,7 @@ This checklist prevents a polished demo from hiding an unevaluated requirement.
 
 | Rubric requirement | Planned evidence | Status |
 |---|---|---|
+| Private GitHub repository | authenticated push plus unauthenticated visibility check | COMPLETE; REMOTE PUSHES AND PUBLIC API RETURNS 404 |
 | Standard dataset format and annotation tooling | canonical COCO export, deterministic converters, CVAT/SAM 2 workflow | THREE COCO SOURCES + VALIDATED YOLO DETECT/PALLET-SEG/CARTON-SEG COMPLETE |
 | Source, rationale, cost, counts, split, guidelines, biases | `DATASET.md`, manifests, audit report | COMPLETE FOR SUPPLIED LABEL LAYERS |
 | Trained model/weights | committed selected checkpoints + SHA-256/model cards | PALLET DETECT + STRUCTURAL SEGMENT + CARTON SEGMENT COMPLETE; POSE/DAMAGE LABELS ABSENT |
@@ -21,8 +22,10 @@ This checklist prevents a polished demo from hiding an unevaluated requirement.
 | Pose/load weighting | auditable confidence policy | IMPLEMENTED + TESTED |
 | Actual hardware/runtime/memory | benchmark JSON with hardware fingerprint | THREE MODEL CPU LATENCIES COMPLETE; FULL PIPELINE PENDING |
 | Expected Orin changes | deployment note, no borrowed benchmark | DOCUMENTED |
-| TensorRT export cost | measured only after export | EXPORT TOOLING PRESENT; PENDING weights/device |
-| Multi-frame behavior | ByteTrack + temporal fusion evaluation | FUSION IMPLEMENTED + TESTED; PENDING video evaluation |
+| TensorRT export cost | measured only after export | EXPORT TOOLING PRESENT; PENDING EXPORT/TARGET DEVICE |
+| Multi-frame behavior | ByteTrack + temporal fusion evaluation | TRACK-ID FUSION IMPLEMENTED + TESTED; BYTETRACK ADAPTER/VIDEO EVALUATION PENDING |
 | Three worst cases/root causes | report with held-out images | DETECTOR COMPLETE; POSE PENDING |
 | Could not finish/why | explicit README section | PRESENT |
 | AI tools and one caught error | explicit README section | PRESENT |
+| Runnable real-checkpoint adapter | overlay, raw predictions, model hashes, assessment JSON | COMPLETE; HELD-OUT EXAMPLE COMMITTED |
+| Required five-minute recording | user-recorded screen capture | SCRIPT PRESENT; RECORDING PENDING USER ACTION |

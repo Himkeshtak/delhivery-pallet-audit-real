@@ -19,6 +19,12 @@ Adding the independently measured detector and segmenter means gives a 95.5 ms
 arithmetic sequential estimate (about 10.5 FPS), not a measured full-pipeline
 benchmark. The naive every-frame composition therefore misses the 15 FPS goal.
 
+The carton segmenter was measured separately over all 1,000 immutable OSCD test
+images: 81.00 ms mean, 78.25 ms median, 116.90 ms p95, and 241.74 ms maximum,
+or 12.35 FPS from total wall time. This wider distribution depends on the
+number/complexity of predicted masks. It is a component measurement, not a
+Jetson result and not a full-pipeline throughput claim.
+
 ## Target path: Jetson Orin Nano, 15 W, at least 15 FPS
 
 The deployable path is YOLO11n pose + YOLO11n segmentation, geometry/SOP logic on

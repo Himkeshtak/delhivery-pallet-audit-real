@@ -8,7 +8,7 @@ unseen surfaces, and evidence provenance—the highest-risk parts of this task.
 |---|---|---|---|
 | YOLO11 detector | pallet and visible structural-region boxes | small real-time baseline, one maintained interface across detect/segment/pose | Ultralytics has no formal YOLO11 paper; software is AGPL-3.0 or enterprise licensed, so commercial deployment needs a license decision |
 | YOLO11 pose | 8–12 named pallet structural keypoints | deployable geometry localization; topology and calibration remain inspectable | cannot train from boxes; needs a new human-reviewed skeleton dataset |
-| YOLO11 segmentation | primary pallet/load masks | best deployment path for mask-derived overhang and centroid features | needs real polygons and edge benchmark |
+| YOLO11 segmentation | structural pallet parts and individual visible cartons | selected/trained real-time baseline; the carton model reaches 0.650 test mask mAP50-95 | neither source contains the required calibrated pallet/load envelope pair |
 | Mask2Former | offline segmentation accuracy comparator | masked attention is a strong universal segmentation reference | heavier; promote only if held-out mask gains justify measured latency/memory cost |
 | SAM 2 | offline video annotation propagation | reduces mask annotation interactions and maintains temporal object masks | every propagated mask is reviewed; never used as unattended ground truth or runtime compliance evidence |
 | EfficientAD-S | primary visible-damage experiment | teacher–student plus autoencoder design targets fast industrial anomaly localization | nominal-only training still needs real normal crops and a separately labelled damaged holdout |
@@ -18,15 +18,17 @@ unseen surfaces, and evidence provenance—the highest-risk parts of this task.
 
 ## Decision gates
 
-1. Train YOLO detection on the verified box source and YOLO segmentation on the
-   verified polygon source. Do not silently translate one annotation type into
-   another.
+1. **Complete:** train YOLO detection on the verified box source and two YOLO
+   segmentation baselines on their verified polygon sources. Annotation types
+   were not silently translated.
 2. Build a 50-image pose-annotation pilot. Continue YOLO pose only after
    topology QA and inter-reviewer localization statistics pass.
-3. Use SAM 2 only inside the CVAT review workflow.
+3. Use SAM 2 only inside the CVAT review workflow. It was not used to generate
+   any of the completed model's ground truth.
 4. Compare YOLO segmentation and Mask2Former on the same source-grouped holdout;
    deploy YOLO unless the comparator materially improves overhang/centroid error.
-5. Train EfficientAD-S and PatchCore on identical, leakage-free visible crops;
+5. After reviewed good/bad damage labels exist, train EfficientAD-S and
+   PatchCore on identical, leakage-free visible crops;
    choose using image AUROC/F1, pixel AUROC/F1 when masks exist, abstention
    calibration, latency, and memory—not an external benchmark.
 6. Tune ByteTrack and temporal fusion on complete videos, reporting ID switches,
@@ -44,4 +46,3 @@ unseen surfaces, and evidence provenance—the highest-risk parts of this task.
 
 Numbers reported in those papers are motivation only. They are not this
 project's results and never populate the assignment metrics.
-
